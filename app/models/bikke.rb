@@ -1,0 +1,2 @@
+class Bikke < ApplicationRecord
+end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'bikkes/index'
   devise_for :users
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "bikkes#index"
+  resources :bikkes, only: [:index]
 end

@@ -1,0 +1,97 @@
+a {
+  text-decoration: none;
+}
+
+.main {
+  background: #f8f8ff;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 画面上部のトップ写真部分 */
+.title-contents {
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url('topphoto.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1vh 10vw;
+  color: #fff;
+}
+
+.service-title {
+  font-size: 5vh;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.service-explain {
+  font-size: 3vh;
+  line-height: 40px;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+/* //画面上部のトップ写真部分 */
+
+/* レビュー一覧 */
+
+.bikke-contents {
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+  list-style: none;
+}
+
+.bikke-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.bikke-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color: #3ccace;
+  font-weight: bold;
+}
+
+.bikke-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.bikke-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.bikke-img-content {
+  position: relative;
+}
+
+.bikke-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+/* //レビュー一覧 */

@@ -1,0 +1,66 @@
+/* 検索部分 */
+.search-contents {
+  padding: 5vh 30vw ;
+  height: auto;
+  background-color: #ff8c00;
+}
+
+.bike-search,
+.displacement-search,
+.maker-search,
+.type-search {
+  margin: 0 auto 30px;
+}
+
+.bike-title,
+.displacement-title,
+.maker-title,
+.mototype-title {
+  font-size: 20px;
+}
+
+.displacement-list1,
+.displacement-list2,
+.maker-list1,
+.maker-list2,
+.maker-list3,
+.maker-list4,
+.mototype-list1,
+.mototype-list2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px auto 20px;
+}
+
+
+.displacement,
+.maker,
+.mototype {
+  margin-right: 20px;
+  background-color: #fff;
+  padding: 5px 10px;
+}
+
+.search-form {
+  margin: 20px;
+}
+
+.mototype-search {
+  
+}
+
+.mototype {
+  width: 150px;
+  height: 110px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.list-pict {
+  background-color: #fff;
+  object-fit: scale-down;
+  width: 100%;
+  height: 100%;
+}
+
+/* //検索部分 */

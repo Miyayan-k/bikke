@@ -18,10 +18,10 @@
       <%= form_with model: @user, url: user_session_path, class: 'top-session', local: true do |f| %>
         <%= f.email_field :email, class:"top-input-signin", id:"email", placeholder:"email" %>
         <%= f.password_field :password, class:"top-input-signin", id:"password", placeholder:"password" %>
-        <div class='top-login-btn'>
-          <%= f.submit "sign in" ,class:"top-signin-btn" %>
+        <div class='top-signin-btn'>
+          <%= f.submit "sign in" ,class:"top-signin-white-btn" %>
         </div>
-        <div class="top-info-text-signin">
+        <div class="top-info-text-signup">
           会員登録がまだの人は<span><%= link_to "こちら", new_user_registration_path %></span>
         </div>
       <% end %>

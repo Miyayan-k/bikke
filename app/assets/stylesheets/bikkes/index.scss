@@ -33,27 +33,27 @@ a {
   align-items: flex-start;
   justify-content: center;
   padding: 1vh 7vw;
+  animation-name: fadeIn;
+  animation-duration: 2s;
 }
 
 .service-title {
   font-size: 5vh;
-  animation-name: fadeIn;
-  animation-duration: 2s;
 }
 
 .service-explain {
   font-size: 3vh;
   line-height: 40px;
-  animation-name: fadeIn;
-  animation-duration: 2s;
 }
 
 .top-session {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   padding: 1vh 8vw;
+  animation-name: fadeIn;
+  animation-duration: 2s;
 }
 
 .top-input-signin {
@@ -61,6 +61,32 @@ a {
   height: 5vh;
   margin-bottom: 20px;
   background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+}
+
+.top-signin-btn {
+  width: 20vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.top-signin-white-btn {
+  height: 100%;
+  padding: 0 5px;
+  background-color: rgba(255, 180, 180, 0.8);
+  border-radius: 4px;
+}
+
+.top-info-text-signup {
+  font-size: 2vh;
+}
+
+.top-info-text-signup>span {
+  font-weight: bold;
+  color: #6495ed;
 }
 
 /* //画面上部のトップ写真部分 */

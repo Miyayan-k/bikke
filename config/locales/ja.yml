@@ -1,0 +1,33 @@
+ja:
+  time:
+    formats:
+      default: "%m/%d %H:%M"
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード(確認)
+      bikke:
+        image: 画像
+        :user: ユーザー
+      comment:
+        text: コメント
+        :user: ユーザー
+        :item: 商品
+    errors:
+      messages:
+        other_than: を選択してください。
+        not_a_number: は半角数字のみ入力できます。
+
+  activemodel:
+    attributes:
+      purchase_address:
+        user_id: ユーザー
+        bikke_id: レビュー
+    errors:
+      messages:
+        other_than: を選択してください。

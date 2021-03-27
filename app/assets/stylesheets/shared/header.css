@@ -43,6 +43,9 @@
   font-weight: bold;
 }
 
+.post-review {
+  margin-right: 3vw;
+}
 
 .logout {
   text-decoration: none;

@@ -3,15 +3,29 @@
 
   <%# 画面上部のトップ写真部分 %>
   <div class='title-contents'>
-    <h2 class='service-title'>
-      BIKKE!! -ONLY THAT RIDER KNOWS-
-    </h2>
-    <p class='service-explain'>
-      -ライダーにしかわからないことがある-
-    </p>
-    <p class='service-explain'>
-      BIKKE!!はあなたのバイク探しをお手伝いします
-    </p>
+    <div class='title-text'>
+      <h2 class='service-title'>
+        BIKKE!! -ONLY THAT RIDER KNOWS-
+      </h2>
+      <p class='service-explain'>
+        -ライダーにしかわからないことがある-
+      </p>
+      <p class='service-explain'>
+        BIKKE!!はあなたのバイク探しをお手伝いします
+      </p>
+    </div>
+    <% unless user_signed_in? %>
+      <%= form_with model: @user, url: user_session_path, class: 'top-session', local: true do |f| %>
+        <%= f.email_field :email, class:"top-input-signin", id:"email", placeholder:"email" %>
+        <%= f.password_field :password, class:"top-input-signin", id:"password", placeholder:"password" %>
+        <div class='top-signin-btn'>
+          <%= f.submit "sign in" ,class:"top-signin-white-btn" %>
+        </div>
+        <div class="top-info-text-signup">
+          会員登録がまだの人は<span><%= link_to "こちら", new_user_registration_path %></span>
+        </div>
+      <% end %>
+    <% end %>
   </div>
   <%# /画面上部のトップ写真部分  %>
 

@@ -24,11 +24,15 @@ a {
   background-repeat: no-repeat;
   background-position: top center;
   display: flex;
+  color: #fff;
+}
+
+.title-text {
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 1vh 10vw;
-  color: #fff;
+  padding: 1vh 7vw;
 }
 
 .service-title {
@@ -42,6 +46,21 @@ a {
   line-height: 40px;
   animation-name: fadeIn;
   animation-duration: 2s;
+}
+
+.top-session {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1vh 8vw;
+}
+
+.top-input-signin {
+  width: 20vw;
+  height: 5vh;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* //画面上部のトップ写真部分 */

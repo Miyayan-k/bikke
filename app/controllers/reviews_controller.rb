@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   end
 
   private
-  def bikke_params
+  def review_params
     params.require(:review).permit(
       :bike, :year, :displacement_id, :maker_id, :type_id,
       :recommend, :comfort, :fuel, :maintenance, :cost,

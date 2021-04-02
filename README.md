@@ -8,13 +8,13 @@
 | encrypted_password | string | null: false               |
 | nickname           | string | null: false               |
 ### Association
-- has_many :bikkes
+- has_many :reviews
 - has_many :comments
-## bikkesテーブル
+## reviewsテーブル
 | Column            | Type          | Options                        |
 | ----------------- | ------------- | ------------------------------ |
 | bike              | string        | null: false                    |
-| year              | integer       |                                |
+| year              | integer       | null: false                    |
 | displacement_id   | integer       | null: false                    |
 | maker_id          | integer       | null: false                    |
 | type_id           | integer       | null: false                    |
@@ -25,7 +25,7 @@
 | cost              | float         | null: false                    |
 | speed             | float         | null: false                    |
 | look              | float         | null: false                    |
-| review            | text          |                                |
+| content           | text          | null: false                    |
 | user              | references    | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
@@ -35,10 +35,11 @@
 | --------- | ---------- | ------------------------------ |
 | text      | text       | null: false                    |
 | user      | references | null: false, foreign_key: true |
-| bikke     | references | null: false, foreign_key: true |
+| review    | references | null: false, foreign_key: true |
 ### Association
 - belongs_to :user
-- belongs_to :bikke
+- belongs_to :review
+
 * System dependencies
 * Configuration
 * Database creation

@@ -13,5 +13,5 @@ class Type < ActiveHash::Base
   ]
 
   include ActiveHash::Associations
-  has_many :bikkes
+  has_many :reviews
 end

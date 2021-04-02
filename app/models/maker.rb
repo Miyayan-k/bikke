@@ -20,9 +20,9 @@ class Maker < ActiveHash::Base
     { id: 17, name: 'bimota' },
     { id: 18, name: 'Husqvana' },
     { id: 19, name: 'bimota' },
-    { id: 19, name: 'その他' }
+    { id: 20, name: 'その他' }
   ]
 
   include ActiveHash::Associations
-  has_many :bikkes
+  has_many :reviews
 end

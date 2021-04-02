@@ -1,8 +1,8 @@
-class CreateBikkes < ActiveRecord::Migration[6.1]
+class CreateReviews < ActiveRecord::Migration[6.1]
   def change
-    create_table :bikkes do |t|
+    create_table :reviews do |t|
       t.string     :bike,            null: false
-      t.integer    :year
+      t.integer    :year,            null: false
       t.integer    :displacement_id, null: false
       t.integer    :maker_id,        null: false
       t.integer    :type_id,         null: false
@@ -13,7 +13,7 @@ class CreateBikkes < ActiveRecord::Migration[6.1]
       t.float      :cost,            null: false
       t.float      :speed,           null: false
       t.float      :look,            null: false
-      t.text       :review,          null: false
+      t.text       :content,         null: false
       t.references :user,            null: false, foreign_key: true
       t.timestamps
     end

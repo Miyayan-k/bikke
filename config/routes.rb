@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "bikkes#index"
-  resources :bikkes, only: [:index, :new]
+  root to: "reviews#index"
+  resources :reviews, only: [:index, :new]
 
   # ゲストログイン機能
   devise_scope :user do

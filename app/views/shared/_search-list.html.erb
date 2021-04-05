@@ -1,81 +1,81 @@
-  <div class='search-contents'>
-    <div class='bike-search'>
-      <div class="bike-title">▶︎　車種名から探す</div>
-      <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :bike, placeholder: "車種名", class: "input-box" %>
-        <%= form.submit "検索", class: "search-button" %>
-       <% end %>
-    </div>
-    <div class='displacement-search'>
-      <div class="displacement-title">▶︎　排気量から探す</div>
-      <ul class="displacement-list1">
-        <li class="displacement">50CC以下</li>
-        <li class="displacement">51~125CC</li>
-        <li class="displacement">126~250CC</li>
-        <li class="displacement">251~400CC</li>
-      </ul>
-      <ul class="displacement-list2">
-        <li class="displacement">401~750CC</li>
-        <li class="displacement">751~1000CC</li>
-        <li class="displacement">1000CC以上</li>
-      </ul>
-    </div>
-    <div class='maker-search'>
-      <div class="maker-title">▶︎　メーカーから探す</div>
-      <ul class="maker-list1">
-        <%= link_to "HONDA", "#", class:"maker"%>
-        <%= link_to "YAMAHA", "#", class:"maker" %>
-        <%= link_to "SUZUKI", "#", class:"maker" %>
-        <%= link_to "KAWASAKI", "#", class:"maker" %>
-      </ul>
-      <ul class="maker-list2">
-        <li class="maker">DOCATI</li>
-        <li class="maker">BMW</li>
-        <li class="maker">Harley-Davidson</li>
-        <li class="maker">TRIUMPH</li>
-        <li class="maker">KTM</li>
-      </ul>
-      <ul class="maker-list3">
-        <li class="maker">Aprilia</li>
-        <li class="maker">MotoGuzzi</li>
-        <li class="maker">MV Agusta</li>
-        <li class="maker">Vespa</li>
-      </ul>
-      <ul class="maker-list4">
-        <li class="maker">Indian</li>
-        <li class="maker">KYMCO</li>
-        <li class="maker">その他</li>
-      </ul>
-    </div>
-    <div class='mototype-search'>
-      <div class="mototype-title">▶︎　タイプから探す</div>
-      <ul class="mototype-list1">
-        <li class="mototype">
-          <%= link_to image_tag("SS.png", class:"list-pict"), "#" %>
-          スーパースポーツ</li>
-        <li class="mototype">
-          <%= link_to image_tag("naked.png", class:"list-pict"), "#" %>
-          ネイキッド</li>
-        <li class="mototype">
-          <%= link_to image_tag("american.png", class:"list-pict"), "#" %>
-          アメリカン</li>
-        <li class="mototype">
-          <%= link_to image_tag("street.png", class:"list-pict"), "#" %>
-          ストリート</li>
-      </ul>
-      <ul class="mototype-list2">
-        <li class="mototype">
-          <%= link_to image_tag("offroad.png", class:"list-pict"), "#" %>
-          オフロード</li>
-        <li class="mototype">
-          <%= link_to image_tag("motard.png", class:"list-pict"), "#" %>
-          モタード</li>
-        <li class="mototype">
-          <%= link_to image_tag("scooter.png", class:"list-pict"), "#" %>
-          スクーター</li>
-        <li class="mototype">
-          <%= link_to image_tag("trike.png", class:"list-pict"), "#" %>
-          トライク</li>
-      </ul>
-    </div>
+<div class='search-contents'>
+  <div class='bike-search'>
+    <div class="bike-title">▶︎　車種名から探す</div>
+    <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
+      <%= form.text_field :bike, placeholder: "車種名", class: "input-box" %>
+      <%= form.submit "検索", class: "search-button" %>
+      <% end %>
   </div>
+  <div class='displacement-search'>
+    <div class="displacement-title">▶︎　排気量から探す</div>
+    <ul class="displacement-list1">
+      <li class="displacement">50CC以下</li>
+      <li class="displacement">51~125CC</li>
+      <li class="displacement">126~250CC</li>
+      <li class="displacement">251~400CC</li>
+    </ul>
+    <ul class="displacement-list2">
+      <li class="displacement">401~750CC</li>
+      <li class="displacement">751~1000CC</li>
+      <li class="displacement">1000CC以上</li>
+    </ul>
+  </div>
+  <div class='maker-search'>
+    <div class="maker-title">▶︎　メーカーから探す</div>
+    <ul class="maker-list1">
+      <%= link_to "HONDA", "#", class:"maker"%>
+      <%= link_to "YAMAHA", "#", class:"maker" %>
+      <%= link_to "SUZUKI", "#", class:"maker" %>
+      <%= link_to "KAWASAKI", "#", class:"maker" %>
+    </ul>
+    <ul class="maker-list2">
+      <li class="maker">DOCATI</li>
+      <li class="maker">BMW</li>
+      <li class="maker">Harley-Davidson</li>
+      <li class="maker">TRIUMPH</li>
+      <li class="maker">KTM</li>
+    </ul>
+    <ul class="maker-list3">
+      <li class="maker">Aprilia</li>
+      <li class="maker">MotoGuzzi</li>
+      <li class="maker">MV Agusta</li>
+      <li class="maker">Vespa</li>
+    </ul>
+    <ul class="maker-list4">
+      <li class="maker">Indian</li>
+      <li class="maker">KYMCO</li>
+      <li class="maker">その他</li>
+    </ul>
+  </div>
+  <div class='mototype-search'>
+    <div class="mototype-title">▶︎　タイプから探す</div>
+    <ul class="mototype-list1">
+      <li class="mototype">
+        <%= link_to image_tag("SS.png", class:"list-pict"), "#" %>
+        スーパースポーツ</li>
+      <li class="mototype">
+        <%= link_to image_tag("naked.png", class:"list-pict"), "#" %>
+        ネイキッド</li>
+      <li class="mototype">
+        <%= link_to image_tag("american.png", class:"list-pict"), "#" %>
+        アメリカン</li>
+      <li class="mototype">
+        <%= link_to image_tag("street.png", class:"list-pict"), "#" %>
+        ストリート</li>
+    </ul>
+    <ul class="mototype-list2">
+      <li class="mototype">
+        <%= link_to image_tag("offroad.png", class:"list-pict"), "#" %>
+        オフロード</li>
+      <li class="mototype">
+        <%= link_to image_tag("motard.png", class:"list-pict"), "#" %>
+        モタード</li>
+      <li class="mototype">
+        <%= link_to image_tag("scooter.png", class:"list-pict"), "#" %>
+        スクーター</li>
+      <li class="mototype">
+        <%= link_to image_tag("trike.png", class:"list-pict"), "#" %>
+        トライク</li>
+    </ul>
+  </div>
+</div>

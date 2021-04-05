@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :bikke do
+  factory :review do
     
   end
 end

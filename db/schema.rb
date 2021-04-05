@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_27_134354) do
+ActiveRecord::Schema.define(version: 2021_04_02_133734) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -40,9 +40,19 @@ ActiveRecord::Schema.define(version: 2021_03_27_134354) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "bikkes", charset: "utf8", force: :cascade do |t|
+  create_table "comments", charset: "utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.bigint "review_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["review_id"], name: "index_comments_on_review_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "reviews", charset: "utf8", force: :cascade do |t|
     t.string "bike", null: false
-    t.integer "year"
+    t.integer "year", null: false
     t.integer "displacement_id", null: false
     t.integer "maker_id", null: false
     t.integer "type_id", null: false
@@ -53,21 +63,11 @@ ActiveRecord::Schema.define(version: 2021_03_27_134354) do
     t.float "cost", null: false
     t.float "speed", null: false
     t.float "look", null: false
-    t.text "review", null: false
+    t.text "content", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_bikkes_on_user_id"
-  end
-
-  create_table "comments", charset: "utf8", force: :cascade do |t|
-    t.text "text", null: false
-    t.bigint "user_id", null: false
-    t.bigint "bikke_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["bikke_id"], name: "index_comments_on_bikke_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", charset: "utf8", force: :cascade do |t|
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2021_03_27_134354) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bikkes", "users"
-  add_foreign_key "comments", "bikkes"
+  add_foreign_key "comments", "reviews"
   add_foreign_key "comments", "users"
+  add_foreign_key "reviews", "users"
 end

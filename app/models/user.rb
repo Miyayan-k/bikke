@@ -7,12 +7,13 @@ class User < ApplicationRecord
   
   validates :nickname, presence: true
 
-  has_many :bikkes
+  has_many :reviews
   has_many :comments
 
+  # ゲストログインするため
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
-      user.password = SecureRandom.urlsafe_base64
+      user.password = SecureRandom.hex(10)
       user.nickname = "GuestUser"
     end
   end

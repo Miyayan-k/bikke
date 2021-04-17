@@ -1,11 +1,3 @@
-a {
-  text-decoration: none;
-}
-
-.main {
-  background: #f8f8ff;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -14,6 +6,15 @@ a {
     opacity: 1;
   }
 }
+
+a {
+  text-decoration: none;
+}
+
+.main {
+  background: #f8f8ff;
+}
+
 
 /* 画面上部のトップ写真部分 */
 .title-contents {

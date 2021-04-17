@@ -1,10 +1,20 @@
 class ReviewsController < ApplicationController
   def index
     @user = User.new
+    @reviews = Review.includes(:user).order('created_at DESC').limit(10)
   end
 
   def new
-    @breview = Review.new
+    @review = Review.new
+  end
+
+  def create
+    @review = Review.new(review_params)
+    if @review.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   private

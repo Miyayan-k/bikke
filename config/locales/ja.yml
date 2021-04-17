@@ -11,23 +11,36 @@ ja:
         email: メールアドレス
         password: パスワード
         password_confirmation: パスワード(確認)
-      bikke:
-        image: 画像
+      review:
+        :image: 画像
         :user: ユーザー
+        :bike: 車種名
+        :year: 年式
+        :displacement_id: 排気量
+        :maker_id: メーカー
+        :type_id: 車種タイプ
+        :recommend: 総合評価
+        :comfort: 乗り心地
+        :fuel: 燃費
+        :maintenance: メンテナンス性
+        :cost: 維持費
+        :speed: 速度
+        :look: 見た目の満足度
+        :content: レビュー
       comment:
-        text: コメント
+        :text: コメント
         :user: ユーザー
-        :item: 商品
+        :review: レビュー
     errors:
       messages:
         other_than: を選択してください。
-        not_a_number: は半角数字のみ入力できます。
+        # not_a_number: は半角数字のみ入力できます。
 
   activemodel:
     attributes:
       purchase_address:
         user_id: ユーザー
-        bikke_id: レビュー
+        review_id: レビュー
     errors:
       messages:
         other_than: を選択してください。

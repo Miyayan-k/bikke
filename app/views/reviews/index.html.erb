@@ -32,11 +32,10 @@
 <%= render "shared/search-list" %>
   <%# 検索部分 %>
   <%# レビュー一覧 %>
-  <div class='bikke-contents'>
-    <h2 class='title'>最新レビュー投稿一覧</h2>
-    <%= link_to '新規投稿レビュー', "#", class: "subtitle" %>
-    <ul class='bikke-lists'>
-      <%#= render partial: 'item', collection: @items %>
+  <div class='review-contents'>
+    <h2 class='title'>New Reviews</h2>
+    <ul class='review-lists'>
+      <%= render partial: 'review', collection: @reviews %>
 
     </ul>
   </div>

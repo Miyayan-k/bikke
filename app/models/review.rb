@@ -1,22 +1,15 @@
 class Review < ApplicationRecord
   with_options presence: true do
     validates :bike
-    validates :content
     validates :year
-    # NOT NULLに加えて星評価を1〜５までに限定
-    with_options numericality: {
-      greater_than_or_equal_to: 1,
-      less_than_or_equal_to: 5
-    } do
-      validates :recommend
-      validates :comfort
-      validates :fuel
-      validates :maintenance
-      validates :cost
-      validates :speed
-      validates :look
-      validates :image
-    end
+    validates :comfort
+    validates :fuel
+    validates :maintenance
+    validates :cost
+    validates :speed
+    validates :look
+    validates :recommend
+    validates :content
   end
 
   # ActiveHashの空白保存不可を付与

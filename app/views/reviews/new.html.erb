@@ -1,3 +1,120 @@
 <%= render "shared/second_header" %>
 
+<div class="bike-review-contents">
+
+  <div class="post-review-main">
+    <h2 class="post-review-title">レビュー投稿</h2>
+    <%= form_with(model: @review, local: true) do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <%# バイク画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        <span class="optional">任意</span>
+        お気に入りの写真
+      </div>
+      <div id="image-list"></div>
+      <div class="click-upload">
+        <p>
+          お気に入りの写真があれば共有しましょう！
+        </p>
+        <%= f.file_field :image, id:"bike-image" %>
+      </div>
+    </div>
+    <%# /バイク画像 %>
+
+    <div class="bike-prof">
+      <div class="weight-bold-text">
+        車種名
+      </div>
+      <%= f.text_area :bike, class:"bike-text", id:"item-name", placeholder:"必須　20文字まで", maxlength:"20" %>
+      <span>※アルファベット表記にすると他のユーザーがあなたのレビューを探しやすくなります</span>
+    </div>
+    <div class="bike-prof">
+      <div class="weight-bold-text">
+        年式
+      </div>
+      <%= f.text_area :year, class:"bike-text", id:"item-name", placeholder:"必須　例)2021", maxlength:"4" %>
+      <span>※西暦(4桁)・半角数字でご入力ください</span>
+    </div>
+
+    <%# レビューActiveHash %>
+    <div class="bike-detail-hash">
+        <div class="hash-box">
+          <div class="weight-bold-text">
+            排気量
+          </div>
+          <%= f.collection_select(:displacement_id, Displacement.all, :id, :name, {}, class:"select-box") %>
+        </div>
+        <div class="hash-box">
+          <div class="weight-bold-text">
+            メーカー
+          </div>
+          <%= f.collection_select(:maker_id, Maker.all, :id, :name, {}, class:"select-box") %>
+        </div>
+        <div class="hash-box">
+          <div class="weight-bold-text">
+            車種タイプ
+          </div>
+          <%= f.collection_select(:type_id, Type.all, :id, :name, {}, class:"select-box") %>
+        </div>
+    </div>
+    <%# /レビューActiveHash %>
+
+    <%# 星評価 %>
+    <div class="bike-star-eval">
+      <div class="star-form-group" id="star1">
+        <%= f.label :comfort,'乗り心地　　　', class:'weight-bold-text star-title' %>
+        <%= f.hidden_field :comfort, id: :review_star %>
+      </div>
+      <div class="star-form-group" id="star2">
+        <%= f.label :fuel,'燃費　　　　　', class:'weight-bold-text star-title' %>
+        <%= f.hidden_field :fuel, id: :review_star %>
+      </div>
+      <div class="star-form-group" id="star3">
+        <%= f.label :maintenance,'メンテナンス性', class:'weight-bold-text star-title' %>
+        <%= f.hidden_field :maintenance, id: :review_star %>
+      </div>
+      <div class="star-form-group" id="star4">
+        <%= f.label :cost,'維持費　　　　', class:'weight-bold-text star-title' %>
+        <%= f.hidden_field :cost, id: :review_star %>
+      </div>
+      <div class="star-form-group" id="star5">
+        <%= f.label :speed,'速度　　　　　', class:'weight-bold-text star-title' %>
+        <%= f.hidden_field :speed, id: :review_star %>
+      </div>
+      <div class="star-form-group" id="star6">
+        <%= f.label :look,'見た目の満足度', class:'weight-bold-text star-title' %>
+        <%= f.hidden_field :look, id: :review_star %>
+      </div>
+      <div class="star-form-group" id="star7">
+        <%= f.label :recommend,'総合評価　　　', class:'weight-bold-text star-title' %>
+        <%= f.hidden_field :recommend, id: :review_star %>
+      </div>
+    </div>
+    <%# /星評価 %>
+
+    <%# レビューコメント %>
+      <div class="bike-content">
+        <div class="weight-bold-text">レビュー</div>
+        <%= f.text_area :content, class:"bike-text", id:"bike-info",
+        placeholder:"必須　最大1,000文字まで",rows:"9" ,maxlength:"1000" %>
+      </div>
+    <%# /レビューコメント %>
+
+    <%# 下部ボタン %>
+    <div class="post-btn-contents">
+      <%= f.submit "投稿する", class:"post-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+
+  <!-- 星評価javascript -->
+<%= render "shared/star_eval" %>
+
+</div>
+
 <%= render "shared/second_footer" %>

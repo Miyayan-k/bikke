@@ -27,6 +27,9 @@ module Bikke
     config.time_zone = 'Tokyo'
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
+    #フォーム入力内容に謝りがあった場合に自動生成されるfield_with_errorsクラスを防ぐために追記
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

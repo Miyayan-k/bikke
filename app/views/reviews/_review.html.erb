@@ -1,0 +1,33 @@
+<li class='list'>
+  <%= link_to review_path(review.id) do %>
+  <div class='review-img-content'>
+    <% if review.image.attached? %>
+      <%= image_tag review.image, class: "review-img" %>
+    <% else %>
+      <%= image_tag "noimage.png", class: "review-img" %>
+    <% end %>
+  </div>
+
+  <div class='review-info'>
+    <h3 class='review-name'>
+      <%= review.bike %>
+    </h3>
+    <div class='review-recommend-eval'>
+      <span class="recommend-eval-text">総合評価</span>
+      <div id="star-rate-<%= review.id %>"></div>
+    </div>
+  </div>
+  <% end %>
+</li>
+
+<script>
+  $('#star-rate-<%= review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: <%= review.recommend %>,
+  });
+</script>

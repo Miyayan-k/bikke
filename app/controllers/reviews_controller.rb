@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :find_review, only: [:show, :edit, :update]
+
   def index
     @user = User.new
     @reviews = Review.includes(:user).order('created_at DESC').limit(10)
@@ -18,10 +20,24 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = Review.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @review.update(review_params)
+      redirect_to review_path(params[:id])
+    else
+      render :edit
+    end
   end
 
   private
+  def find_review
+    @review = Review.find(params[:id])
+  end
+
   def review_params
     params.require(:review).permit(
       :bike, :year, :displacement_id, :maker_id, :type_id,

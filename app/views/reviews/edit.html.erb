@@ -3,7 +3,7 @@
 <div class="bike-review-contents">
 
   <div class="post-review-main">
-    <h2 class="post-review-title">レビュー投稿</h2>
+    <h2 class="post-review-title">レビュー編集</h2>
     <%= form_with(model: @review, local: true) do |f| %>
 
     <%= render 'shared/error_messages', model: f.object %>
@@ -36,7 +36,7 @@
         年式
       </div>
       <%= f.text_area :year, class:"bike-text", id:"item-name", placeholder:"必須　例)2021" %>
-      <span>※西暦(4桁のみ)・半角数字でご入力ください</span>
+      <span>※西暦(4桁)のみ・半角数字でご入力ください</span>
     </div>
 
     <%# レビューActiveHash %>
@@ -64,33 +64,33 @@
 
     <%# 星評価 %>
     <div class="bike-star-eval">
-      <div class="star-form-group" id="star1">
+      <div class="star-edit-group">
         <%= f.label :comfort,'乗り心地　　　', class:'weight-bold-text star-title' %>
-        <%= f.hidden_field :comfort, id: :review_star %>
+        <div class="detail-value", id="edit-comf-<%= @review.id %>"></div>
       </div>
-      <div class="star-form-group" id="star2">
+      <div class="star-edit-group">
         <%= f.label :fuel,'燃費　　　　　', class:'weight-bold-text star-title' %>
-        <%= f.hidden_field :fuel, id: :review_star %>
+        <div class="detail-value", id="edit-fuel-<%= @review.id %>"></div>
       </div>
-      <div class="star-form-group" id="star3">
+      <div class="star-edit-group">
         <%= f.label :maintenance,'メンテナンス性', class:'weight-bold-text star-title' %>
-        <%= f.hidden_field :maintenance, id: :review_star %>
+        <div class="detail-value", id="edit-mainte-<%= @review.id %>"></div>
       </div>
-      <div class="star-form-group" id="star4">
+      <div class="star-edit-group">
         <%= f.label :cost,'維持費　　　　', class:'weight-bold-text star-title' %>
-        <%= f.hidden_field :cost, id: :review_star %>
+        <div class="detail-value", id="edit-cost-<%= @review.id %>"></div>
       </div>
-      <div class="star-form-group" id="star5">
+      <div class="star-edit-group">
         <%= f.label :speed,'速度　　　　　', class:'weight-bold-text star-title' %>
-        <%= f.hidden_field :speed, id: :review_star %>
+        <div class="detail-value", id="edit-speed-<%= @review.id %>"></div>
       </div>
-      <div class="star-form-group" id="star6">
+      <div class="star-edit-group">
         <%= f.label :look,'見た目の満足度', class:'weight-bold-text star-title' %>
-        <%= f.hidden_field :look, id: :review_star %>
+        <div class="detail-value", id="edit-look-<%= @review.id %>"></div>
       </div>
-      <div class="star-form-group" id="star7">
+      <div class="star-edit-group">
         <%= f.label :recommend,'総合評価　　　', class:'weight-bold-text star-title' %>
-        <%= f.hidden_field :recommend, id: :review_star %>
+        <div class="detail-value", id="edit-reco-<%= @review.id %>"></div>
       </div>
     </div>
     <%# /星評価 %>
@@ -105,8 +105,8 @@
 
     <%# 下部ボタン %>
     <div class="post-btn-contents">
-      <%= f.submit "投稿する", class:"post-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      <%= f.submit "更新する", class:"post-btn" %>
+      <%=link_to 'もどる', review_path(params[:id]), class:"back-btn" %>
     </div>
     <%# /下部ボタン %>
   </div>

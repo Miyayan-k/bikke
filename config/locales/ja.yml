@@ -35,6 +35,7 @@ ja:
       messages:
         other_than: を選択してください。
         # not_a_number: は半角数字のみ入力できます。
+        wrong_length: は4桁で入力してください。
 
   activemodel:
     attributes:

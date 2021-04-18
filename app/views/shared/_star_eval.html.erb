@@ -149,3 +149,75 @@ $('#star7').raty({
   });
 </script>
 <%# /レビュー詳細 %>
+<%# 編集画面 %>
+<script>
+  $('#edit-comf-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.comfort %>,
+  });
+</script>
+<script>
+  $('#edit-fuel-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.fuel %>,
+  });
+</script>
+<script>
+  $('#edit-mainte-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.maintenance %>,
+  });
+</script>
+<script>
+  $('#edit-cost-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.cost %>,
+  });
+</script>
+<script>
+  $('#edit-speed-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.speed %>,
+  });
+</script>
+<script>
+  $('#edit-look-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.look %>,
+  });
+</script>
+<script>
+  $('#edit-reco-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.recommend %>,
+  });
+</script>
+<%# /編集画面 %>

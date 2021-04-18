@@ -50,7 +50,7 @@
 
 /* /共通 */
 
-/* 出品画像 */
+/* バイク画像 */
 .img-upload {
   display: flex;
   justify-content: space-between;
@@ -73,7 +73,7 @@
   object-fit: contain;
 } */
 
-/* /出品画像 */
+/* /バイク画像 */
 
 /* 車種名と年式、レビューコメント */
 .bike-prof {

@@ -1,0 +1,201 @@
+/* レビュー概要 */
+
+.review-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.review-box {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 1200px;
+  padding: 10vh 15vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.review-box-img {
+  height: 40vh;
+  width: 50vw;
+  min-height: 500px;
+  background-color: #fff0f5;
+  object-fit: contain;
+}
+
+.review-prof-box {
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-prof-box>.review-title {
+  font-size: 3vh;
+  font-weight: bold;
+  text-align: center;
+}
+
+.review-prof-box>.review-bike-states {
+  font-size: 2vh;
+}
+
+.review-prof-box>.bold {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.recommend-eval {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.recommend-eval>.eval-text {
+  font-size: 3vh;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1vh;
+}
+
+.recommend-eval>.eval-star {
+  text-align: center;
+}
+
+.review-explain-box {
+  font-size: 2vh;
+  margin: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-content {
+  text-align: center;
+  font-size: 3vh;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+
+.review-star-eval {
+  width: 80%;
+}
+
+.star-group {
+  margin-bottom: 1vh;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+}
+
+.star-group>.detail-review {
+  margin-right: 3vw;
+}
+
+.star-group>.eval-star {
+  margin-left: 1vw;
+}
+
+.edit-delete-group {
+  display: flex;
+}
+
+.review-edit-btn {
+  text-align: center;
+  background-color: #ff8c0f;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 3vh 2vw;
+  padding: 1vh 5vw;
+}
+
+.review-destroy {
+  background-color: lightgray;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  margin: 3vh 2vw;
+  padding: 1vh 5vw;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 3vh;
+}
+
+.favorite-btn {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  color: #2d2d2d;
+  border: 2px solid #ffb340;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite-star-icon {
+  margin-right: 1vw;
+}
+
+/* /レビュー概要 */
+/* コメント */
+.comment-box {
+  width: 40vw;
+  background-color: #fff;
+  margin: 5vh 0;
+  text-align: center;
+}
+
+.comment_text {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: solid 2px #dedede;
+  resize: none;
+}
+
+.comment-warn {
+  padding: 10px;
+  font-size: 14px;
+  margin: 10px 0px;
+  text-align: left;
+}
+
+.comment_btn {
+  line-height: 48px;
+  background-color: #3CCACE;
+  border: 1px solid #3CCACE;
+  color: #fff;
+  width: 50%;
+  min-width: 150px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+}
+
+.comment-user{
+  color: black;
+  font-size: 12px;
+}
+
+.comments-list{
+  list-style-type: square;
+  list-style-position: inside;
+  text-align: left;
+}
+
+.comment-text{
+  overflow-wrap: break-word;
+}
+
+.comment-time{
+  color: #C0C0C0;
+  font-size: 8px;
+}
+/* /コメント */

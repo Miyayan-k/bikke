@@ -1,0 +1,126 @@
+<%= render "shared/second_header" %>
+
+<div class="review-show">
+  <div class="review-box">
+    <div class="item-img-content">
+      <% if @review.image.attached? %>
+        <%= image_tag @review.image, class:"review-box-img" %>
+      <% else %>
+        <%= image_tag "noimage.png", class:"review-box-img" %>
+      <% end %>
+    </div>
+    <div class="review-prof-box">
+      <div class="review-title">基本情報</div>
+      <div class="review-bike-states">
+        <%= "ライダー　　： #{@review.user.nickname}" %>
+      </div>
+      <div class="review-bike-states">
+        <%= "車種名　　　： #{@review.bike}" %>
+      </div>
+      <div class="review-bike-states">
+        <%= "年式　　　　： #{@review.year}" %>
+      </div>
+      <div class="review-bike-states">
+        <%= "排気量　　　： #{@review.displacement.name}" %>
+      </div>
+      <div class="review-bike-states">
+        <%= "メーカー　　： #{@review.maker.name}" %>
+      </div>
+      <div class="review-bike-states">
+        <%= "車種タイプ　： #{@review.type.name}" %>
+      </div>
+    </div>
+    <div class='recommend-eval'>
+      <span class="eval-text">総合評価</span>
+      <div id="star-reco-<%= @review.id %>"></div>
+      <div class="eval-star"><%= @review.recommend %>/5点</div>
+    </div>
+    <div class="review-explain-box">
+      <div class="review-content">
+        レビュー概要
+      </div>
+      <div><%= @review.content %></div>
+    </div>
+
+    <div class="review-star-eval">
+      <div class="star-group">
+        <div class="detail-review">乗り心地　　　</div>
+        <div class="detail-value", id="star-comf-<%= @review.id %>"></div>
+        <div class="eval-star"><%= @review.comfort %>/5点</div>
+      </div>
+      <div class="star-group">
+        <div class="detail-review">燃費　　　　　</div>
+        <div class="detail-value", id="star-fuel-<%= @review.id %>"></div>
+        <div class="eval-star"><%= @review.fuel %>/5点</div>
+      </div>
+      <div class="star-group">
+        <div class="detail-review">メンテナンス性</div>
+        <div class="detail-value", id="star-mainte-<%= @review.id %>"></div>
+                <div class="eval-star"><%= @review.maintenance %>/5点</div>
+      </div>
+      <div class="star-group">
+        <div class="detail-review">維持費　　　　</div>
+        <div class="detail-value", id="star-cost-<%= @review.id %>"></div>
+                <div class="eval-star"><%= @review.cost %>/5点</div>
+      </div>
+      <div class="star-group">
+        <div class="detail-review">速度　　　　　</div>
+        <div class="detail-value", id="star-speed-<%= @review.id %>"></div>
+                <div class="eval-star"><%= @review.speed %>/5点</div>
+      </div>
+      <div class="star-group">
+        <div class="detail-review">見た目の満足度</div>
+        <div class="detail-value", id="star-look-<%= @review.id %>"></div>
+        <div class="eval-star"><%= @review.look %>/5点</div>
+      </div>
+    </div>
+    <%# 星評価表示 %>
+    <%= render "shared/star_eval" %>
+
+    <%# いいね %>
+    <div class="option">
+      <div class="favorite-btn">
+        <%= image_tag "good.png", class:"favorite-star-icon" ,width:"20",height:"20"%>
+        <span>Good 0</span>
+      </div>
+    </div>
+
+    <%# 編集・削除ボタン %>
+    <div class="edit-delete-group">
+      <% if current_user.id == @review.user_id %>
+        <%= link_to "編集", "#", class: "review-edit-btn" %>
+        <%= link_to "削除", "#", method: :delete, class:"review-destroy" %>
+      <% end %>
+    </div>
+  </div>
+  <%# /商品の概要 %>
+  <%# <div class="comment-box"> %>
+    <%# <% if user_signed_in? %>
+      <%# <%= form_with(model: [@review], local: true) do |f| %>
+      <%# <%= render 'shared/error_messages', model: f.object %>
+        <%# <div> %>
+          <%# <%= f.text_area :text, class: :comment_text %>
+        <%# </div> %>
+        <%# <p class="comment-warn"> %>
+          <%# 相手のことを考え丁寧なコメントを心がけましょう。 %>
+          <%# <br> %>
+          <%# 不快な言葉遣いなどは利用制限や退会処分となることがあります。 %>
+        <%# </p> %>
+        <%# <div> %>
+          <%# <%= f.submit "コメントする", class: :comment_btn %>
+        <%# </div> %>
+      <%# <% end %>
+    <%# <% end %>
+    <%# <ul class="comments-lists"> %>
+      <%# <% @comments.reverse_each do |comment| %>
+        <%# <li class="comments-list"> %>
+          <%# <a class="comment-text"><%= comment.text %>
+          <%# <%= link_to comment.user.nickname, "#", class: "comment-user" %>
+          <%# <a class="comment-time"><%= l comment.created_at %>
+        <%# </li> %>
+      <%# <% end %> 
+    <%# </ul> %>
+  <%# </div> %>
+</div>
+
+<%= render "shared/second_footer" %>

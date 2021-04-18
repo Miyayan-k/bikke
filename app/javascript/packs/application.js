@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import "jquery"
 import "../raty"
+import "../animation"
 
 var jQuery = require('jquery')
 global.$ = global.jQuery = jQuery;

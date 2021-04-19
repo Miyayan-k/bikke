@@ -89,12 +89,12 @@
     <div class="edit-delete-group">
       <% if current_user.id == @review.user_id %>
         <%= link_to "編集", edit_review_path, class: "review-edit-btn" %>
-        <%= link_to "削除", "#", method: :delete, class:"review-destroy" %>
+        <%= link_to "削除", review_path(@review.id), method: :delete, class:"review-destroy", data: {confirm: "レビューを削除しますか？"} %>
       <% end %>
     </div>
   </div>
   <%# /レビューの概要 %>
-  
+
   <%# <div class="comment-box"> %>
     <%# <% if user_signed_in? %>
       <%# <%= form_with(model: [@review], local: true) do |f| %>

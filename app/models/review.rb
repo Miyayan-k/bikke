@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
   with_options presence: true do
     validates :bike
-    validates :year, format: { with: /\A[0-9]+\z/, message: 'は半角数字のみ入力できます。' }, length: { is: 4 }  
+    validates :year, length: { is: 4 }  
     validates :comfort
     validates :fuel
     validates :maintenance

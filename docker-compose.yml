@@ -1,60 +1,29 @@
 version: '3'
 services:
-  app:
-    build:
-      context: .
-    # =========ローカルと本番切り替え===========
-    command: bundle exec puma -C config/puma.rb -e production
-    # command: bundle exec puma -C config/puma.rb
-    # ======================================
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_USER: user
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: bikke_development
+    ports:
+      - '4306:3306'
     volumes:
-      - .:/bikke
-      - public-data:/bikke/public
-      - tmp-data:/bikke/tmp
-      - log-data:/bikke/log
-    networks:
-      - bikke-network
-
-    # =========本番時RDS使用のためコメントアウト===========
-  #   depends_on:
-  #     - db
-
-  # db:
-  #   image: mysql:5.7
-  #   environment:
-  #     MYSQL_USER: user
-  #     MYSQL_ROOT_PASSWORD: password
-  #     MYSQL_PASSWORD: password
-  #     MYSQL_DATABASE: bikke_development
-  #   ports:
-  #     - '4306:3306'
-  #   volumes:
-  #     - mysql-data:/var/lib/mysql
-  #   networks:
-  #     - bikke-network
-    # =========================================================
+      - mysql-data:/var/lib/mysql
 
   web:
     build: 
-      context: ./nginx_docker
-  # command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+      context: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
-      # - .:/bikke
-      - public-data:/bikke/public
-      - tmp-data:/bikke/tmp
+      - .:/bikke
     ports:
-      - '80:80'
+      - '3000:3000'
     depends_on:
-      - app
-    # stdin_open: true
-    # tty: true
+      - db
+    stdin_open: true
+    tty: true
 volumes:
-  public-data:
-  tmp-data:
-  log-data:
   mysql-data:
-    # driver: local
-
-networks:
-  bikke-network:
-    external: true
+    driver: local

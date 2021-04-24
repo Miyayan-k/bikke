@@ -1,7 +1,7 @@
 class Review < ApplicationRecord
   with_options presence: true do
     validates :bike
-    validates :year
+    validates :year, length: { is: 4 }  
     validates :comfort
     validates :fuel
     validates :maintenance

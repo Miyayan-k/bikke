@@ -1,70 +1,230 @@
-  <script>
-  $('#star1').raty({
-    size     : 38,
+<%# 新規レビュー投稿 %>
+<script>
+$('#star1').raty({
+  size     : 38,
+  starOff:  '<%= asset_path('star-off.png') %>',
+  starOn : '<%= asset_path('star-on.png') %>',
+  starHalf: '<%= asset_path('star-half.png') %>',
+  scoreName: 'review[comfort]',
+  half: true,
+});
+</script>
+<script>
+$('#star2').raty({
+  size     : 38,
+  starOff:  '<%= asset_path('star-off.png') %>',
+  starOn : '<%= asset_path('star-on.png') %>',
+  starHalf: '<%= asset_path('star-half.png') %>',
+  scoreName: 'review[fuel]',
+  half: true,
+});
+</script>
+<script>
+$('#star3').raty({
+  size     : 38,
+  starOff:  '<%= asset_path('star-off.png') %>',
+  starOn : '<%= asset_path('star-on.png') %>',
+  starHalf: '<%= asset_path('star-half.png') %>',
+  scoreName: 'review[maintenance]',
+  half: true,
+});
+</script>
+<script>
+$('#star4').raty({
+  size     : 38,
+  starOff:  '<%= asset_path('star-off.png') %>',
+  starOn : '<%= asset_path('star-on.png') %>',
+  starHalf: '<%= asset_path('star-half.png') %>',
+  scoreName: 'review[cost]',
+  half: true,
+});
+</script>
+<script>
+$('#star5').raty({
+  size     : 38,
+  starOff:  '<%= asset_path('star-off.png') %>',
+  starOn : '<%= asset_path('star-on.png') %>',
+  starHalf: '<%= asset_path('star-half.png') %>',
+  scoreName: 'review[speed]',
+  half: true,
+});
+</script>
+<script>
+$('#star6').raty({
+  size     : 38,
+  starOff:  '<%= asset_path('star-off.png') %>',
+  starOn : '<%= asset_path('star-on.png') %>',
+  starHalf: '<%= asset_path('star-half.png') %>',
+  scoreName: 'review[look]',
+  half: true,
+});
+</script>
+<script>
+$('#star7').raty({
+  size     : 38,
+  starOff:  '<%= asset_path('star-off.png') %>',
+  starOn : '<%= asset_path('star-on.png') %>',
+  starHalf: '<%= asset_path('star-half.png') %>',
+  scoreName: 'review[recommend]',
+  half: true,
+});
+</script>
+<%# /新規レビュー投稿 %>
+<%# レビュー詳細 %>
+<script>
+  $('#star-comf-<%= @review.id %>').raty({
+    size: 36,
     starOff:  '<%= asset_path('star-off.png') %>',
     starOn : '<%= asset_path('star-on.png') %>',
     starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: <%= @review.comfort %>,
+  });
+</script>
+<script>
+  $('#star-fuel-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: <%= @review.fuel %>,
+  });
+</script>
+<script>
+  $('#star-mainte-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: <%= @review.maintenance %>,
+  });
+</script>
+<script>
+  $('#star-cost-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: <%= @review.cost %>,
+  });
+</script>
+<script>
+  $('#star-speed-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: <%= @review.speed %>,
+  });
+</script>
+<script>
+  $('#star-look-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: <%= @review.look %>,
+  });
+</script>
+<script>
+  $('#star-reco-<%= @review.id %>').raty({
+    size: 60,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    readOnly: true,
+    score: <%= @review.recommend %>,
+  });
+</script>
+<%# /レビュー詳細 %>
+<%# 編集画面 %>
+<script>
+  $('#edit-comf-<%= @review.id %>').raty({
+    size: 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.comfort %>,
     scoreName: 'review[comfort]',
-    half: true,
   });
-  </script>
-  <script>
-  $('#star2').raty({
-    size     : 38,
+</script>
+<script>
+  $('#edit-fuel-<%= @review.id %>').raty({
+    size: 36,
     starOff:  '<%= asset_path('star-off.png') %>',
     starOn : '<%= asset_path('star-on.png') %>',
     starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.fuel %>,
     scoreName: 'review[fuel]',
-    half: true,
   });
-  </script>
-  <script>
-  $('#star3').raty({
-    size     : 38,
+</script>
+<script>
+  $('#edit-mainte-<%= @review.id %>').raty({
+    size: 36,
     starOff:  '<%= asset_path('star-off.png') %>',
     starOn : '<%= asset_path('star-on.png') %>',
     starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.maintenance %>,
     scoreName: 'review[maintenance]',
-    half: true,
   });
-  </script>
-  <script>
-  $('#star4').raty({
-    size     : 38,
+</script>
+<script>
+  $('#edit-cost-<%= @review.id %>').raty({
+    size: 36,
     starOff:  '<%= asset_path('star-off.png') %>',
     starOn : '<%= asset_path('star-on.png') %>',
     starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.cost %>,
     scoreName: 'review[cost]',
-    half: true,
   });
-  </script>
-  <script>
-  $('#star5').raty({
-    size     : 38,
+</script>
+<script>
+  $('#edit-speed-<%= @review.id %>').raty({
+    size: 36,
     starOff:  '<%= asset_path('star-off.png') %>',
     starOn : '<%= asset_path('star-on.png') %>',
     starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.speed %>,
     scoreName: 'review[speed]',
-    half: true,
   });
-  </script>
-  <script>
-  $('#star6').raty({
-    size     : 38,
+</script>
+<script>
+  $('#edit-look-<%= @review.id %>').raty({
+    size: 36,
     starOff:  '<%= asset_path('star-off.png') %>',
     starOn : '<%= asset_path('star-on.png') %>',
     starHalf: '<%= asset_path('star-half.png') %>',
+    half: true,
+    score: <%= @review.look %>,
     scoreName: 'review[look]',
-    half: true,
   });
-  </script>
-  <script>
-  $('#star7').raty({
-    size     : 38,
+</script>
+<script>
+  $('#edit-reco-<%= @review.id %>').raty({
+    size: 36,
     starOff:  '<%= asset_path('star-off.png') %>',
     starOn : '<%= asset_path('star-on.png') %>',
     starHalf: '<%= asset_path('star-half.png') %>',
-    scoreName: 'review[recommend]',
     half: true,
+    score: <%= @review.recommend %>,
+    scoreName: 'review[recommend]',
   });
-  </script>
+</script>
+<%# /編集画面 %>

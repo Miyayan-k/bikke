@@ -19,11 +19,14 @@
   align-items: center;
 }
 
+.review-img-content {
+  width: 100%;
+}
+
 .review-box-img {
-  height: 40vh;
-  width: 50vw;
+  height: 50vh;
+  width: 60vw;
   min-height: 500px;
-  background-color: #fff0f5;
   object-fit: contain;
 }
 
@@ -81,13 +84,13 @@
 }
 
 .review-star-eval {
-  width: 80%;
+  width: 70vw;
 }
 
 .star-group {
-  margin-bottom: 1vh;
-  border-bottom: 1px solid #ccc;
+  margin-bottom: 1.5vh;
   display: flex;
+  justify-content: center;
 }
 
 .star-group>.detail-review {

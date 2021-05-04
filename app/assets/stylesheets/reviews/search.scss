@@ -1,7 +1,18 @@
-.search-result-contents>.list {
-  width: auto;
-  padding: 1vw;
-  background-color: #f0fff0;
-  margin: 1vw;
-  list-style-type: none;
+.search-result-content>h1 {
+  font-size: 1.5vw;
+  text-align: center;
+  font-weight: bold;
+}
+
+.noresult {
+  font-size: 1vw;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1vh;
+}
+
+.redirect-btn {
+  display: flex;
+  justify-content: center;
+  font-size: 1vw;
 }

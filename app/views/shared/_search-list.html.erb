@@ -81,16 +81,19 @@
   <div class="refined-serach">
     <div class="refined-title">▶︎　絞り込み検索</div>
     <%= search_form_for @r, url: search_reviews_path do |f| %>
-      <%= f.label :displacement_id_eq, '排気量' %>
-      <%= f.collection_select :displacement_id_eq, Displacement.all, :id, :name, prompt: '指定なし' %>
-      <br>
-      <%= f.label :maker_id_eq, 'メーカー' %>
-      <%= f.collection_select :maker_id_eq, Maker.all, :id, :name, prompt: '指定なし' %>
-      <br>
-      <%= f.label :type_id_eq, '車種タイプ' %>
-      <%= f.collection_select :type_id_eq, Type.all, :id, :name, prompt: '指定なし' %>
-      <br>
-      <%= f.submit '検索' %>
+      <div class="refined-label">
+        <%= f.label :displacement_id_eq, '排気量　　' %>
+        <%= f.collection_select :displacement_id_eq, Displacement.all, :id, :name, prompt: '指定なし' %>
+      </div>
+      <div class="refined-label">
+        <%= f.label :maker_id_eq, 'メーカー　' %>
+        <%= f.collection_select :maker_id_eq, Maker.all, :id, :name, prompt: '指定なし' %>
+      </div>
+      <div class="refined-label">
+        <%= f.label :type_id_eq, '車種タイプ' %>
+        <%= f.collection_select :type_id_eq, Type.all, :id, :name, prompt: '指定なし' %>
+      </div>
+      <%= f.submit '検索', class:"refined-btn" %>
     <% end %>
   </div>
 </div>

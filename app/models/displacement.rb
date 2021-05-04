@@ -1,6 +1,5 @@
 class Displacement < ActiveHash::Base
   self.data = [
-    { id: 0, name: '---' },
     { id: 1, name: '50cc以下' },
     { id: 2, name: '51~125cc' },
     { id: 3, name: '126~250cc' },

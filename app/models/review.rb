@@ -1,7 +1,10 @@
 class Review < ApplicationRecord
   with_options presence: true do
     validates :bike
-    validates :year, length: { is: 4 }  
+    validates :year, length: { is: 4 }
+    validates :displacement_id
+    validates :maker_id
+    validates :type_id
     validates :comfort
     validates :fuel
     validates :maintenance
@@ -10,13 +13,6 @@ class Review < ApplicationRecord
     validates :look
     validates :recommend
     validates :content
-  end
-
-  # ActiveHashの空白保存不可を付与
-  with_options numericality: { other_than: 0 } do
-    validates :displacement_id
-    validates :maker_id
-    validates :type_id
   end
 
   belongs_to       :user

@@ -9,15 +9,15 @@
   <div class='displacement-search'>
     <div class="displacement-title">▶︎　排気量から探す</div>
     <ul class="displacement-list1">
-      <li class="displacement">50CC以下</li>
-      <li class="displacement">51~125CC</li>
-      <li class="displacement">126~250CC</li>
-      <li class="displacement">251~400CC</li>
+      <%= link_to "50cc以下", '/reviews/displacement/1', class: "displacement" %>
+      <%= link_to "51~125cc", '/reviews/displacement/2', class: "displacement" %>
+      <%= link_to "126~250cc", '/reviews/displacement/3', class: "displacement" %>
+      <%= link_to "251~400cc", '/reviews/displacement/4', class: "displacement" %>
     </ul>
     <ul class="displacement-list2">
-      <li class="displacement">401~750CC</li>
-      <li class="displacement">751~1000CC</li>
-      <li class="displacement">1000CC以上</li>
+      <%= link_to "401~750cc", '/reviews/displacement/5', class: "displacement" %>
+      <%= link_to "751~1000cc", '/reviews/displacement/6', class: "displacement" %>
+      <%= link_to "1000cc以上", '/reviews/displacement/7', class: "displacement" %>
     </ul>
   </div>
   <div class='maker-search'>

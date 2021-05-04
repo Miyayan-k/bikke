@@ -1,12 +1,12 @@
 <%= render "shared/second_header" %>
-<div class="search-result-content">
-  <h1>
-  検索結果
-  </h1>
 
-  <% if @results.length !=0 %>
+<div class="search-result-content">
+  <div class="displacement-result-title">
+    <%= "#{@review.displacement.name}の一覧ページ" %>
+  </div>
+  <% if @reviews.length !=0 %>
     <ul class='review-lists'>
-      <%  @results.each do |review| %>
+      <%  @reviews.each do |review| %>
         <li class='list'>
           <%= link_to review_path(review.id) do %>
           <div class='review-img-content'>

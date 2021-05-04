@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "reviews#index"
-  resources :reviews
+  # get 'reviews/search', to: 'reviews#search'
+  resources :reviews do
+    collection do
+      get 'search'
+    end
+  end
 
   # ゲストログイン機能
   devise_scope :user do

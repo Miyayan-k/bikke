@@ -1,10 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :find_review, only: [:show, :edit, :update, :destroy]
   before_action :no_reload, only: [:destroy]
+  before_action :search_reviews, only: [:index, :search]
 
   def index
     @user = User.new
-    @reviews = Review.includes(:user).order('created_at DESC').limit(10)
+    @reviews = Review.includes({image_attachment: :blob}).order('created_at DESC')
   end
 
   def new
@@ -43,6 +44,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def search
+    @results = @r.result
+  end
+
   private
   def find_review
     @review = Review.find(params[:id])
@@ -62,5 +67,9 @@ class ReviewsController < ApplicationController
    else
       redirect_to root_path
    end
+  end
+
+  def search_reviews
+    @r = Review.ransack(params[:q])
   end
 end

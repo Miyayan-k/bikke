@@ -1,9 +1,9 @@
 <div class='search-contents'>
   <div class='bike-search'>
     <div class="bike-title">▶︎　車種名から探す</div>
-    <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :bike, placeholder: "車種名", class: "input-box" %>
-      <%= form.submit "検索", class: "search-button" %>
+      <%= search_form_for @r, url: search_reviews_path do |f| %>
+        <%= f.search_field :bike_cont, placeholder: "車種名", class: "search-field" %>
+        <%= f.submit "検索", class: "search-btn" %>
       <% end %>
   </div>
   <div class='displacement-search'>
@@ -93,7 +93,7 @@
         <%= f.label :type_id_eq, '車種タイプ' %>
         <%= f.collection_select :type_id_eq, Type.all, :id, :name, prompt: '指定なし' %>
       </div>
-      <%= f.submit '検索', class:"refined-btn" %>
+      <%= f.submit '検索', class:"search-btn" %>
     <% end %>
   </div>
 </div>

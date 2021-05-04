@@ -18,6 +18,7 @@
 .mototype-title,
 .refined-title {
   font-size: 20px;
+  margin-bottom: 1vh;
 }
 
 .displacement-list1,
@@ -46,8 +47,12 @@
   margin: 20px;
 }
 
-.mototype-search {
-  
+.search-field {
+  padding: 4px 8px;
+  margin-right: 2%;
+  border-radius: 5px;
+  width: 15vw;
+  height: 5vh;
 }
 
 .mototype {
@@ -76,7 +81,7 @@
   border-radius: 5px;
 }
 
-.refined-btn {
+.search-btn {
   padding: 2px 4px;
   background-color: #ffdab9;
   border-radius: 5px;

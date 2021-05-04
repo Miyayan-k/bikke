@@ -45,19 +45,19 @@
           <div class="weight-bold-text">
             排気量
           </div>
-          <%= f.collection_select(:displacement_id, Displacement.all, :id, :name, {}, class:"select-box") %>
+          <%= f.collection_select(:displacement_id, Displacement.all, :id, :name, prompt: '---') %>
         </div>
         <div class="hash-box">
           <div class="weight-bold-text">
             メーカー
           </div>
-          <%= f.collection_select(:maker_id, Maker.all, :id, :name, {}, class:"select-box") %>
+          <%= f.collection_select(:maker_id, Maker.all, :id, :name, prompt: '---') %>
         </div>
         <div class="hash-box">
           <div class="weight-bold-text">
             車種タイプ
           </div>
-          <%= f.collection_select(:type_id, Type.all, :id, :name, {}, class:"select-box") %>
+          <%= f.collection_select(:type_id, Type.all, :id, :name, prompt: '---') %>
         </div>
     </div>
     <%# /レビューActiveHash %>

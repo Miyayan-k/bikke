@@ -45,7 +45,7 @@ class ReviewsController < ApplicationController
   end
 
   def search
-    @results = @r.result
+    @results = @r.result.includes(:image_attachment)
   end
 
   private

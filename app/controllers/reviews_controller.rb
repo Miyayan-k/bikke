@@ -48,6 +48,11 @@ class ReviewsController < ApplicationController
     @results = @r.result.includes(:image_attachment)
   end
 
+  def displacement
+    @review = Review.find_by(displacement_id: params[:id])
+    @reviews = Review.where(displacement_id: params[:id]).includes([:image_attachment]).order('created_at DESC')
+  end
+
   private
   def find_review
     @review = Review.find(params[:id])

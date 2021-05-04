@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "reviews#index"
-  # get 'reviews/search', to: 'reviews#search'
+  get '/reviews/displacement/:id', to: "reviews#displacement"
   resources :reviews do
     collection do
       get 'search'

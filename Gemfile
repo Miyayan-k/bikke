@@ -35,6 +35,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'gimei'
+  gem 'bullet'
 end
 
 group :development do
@@ -57,3 +58,4 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'active_hash'
 gem 'dotenv-rails'
+gem 'ransack'

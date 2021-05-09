@@ -2,7 +2,7 @@
 .search-contents {
   padding: 5vh 25vw ;
   height: auto;
-  background-color: #ff8c00;
+  background-color: #fff;
 }
 
 .bike-search,
@@ -39,8 +39,9 @@
 .maker,
 .mototype {
   margin-right: 20px;
-  background-color: #fff;
   padding: 5px 10px;
+  text-decoration: underline;
+  color: black;
 }
 
 .search-form {

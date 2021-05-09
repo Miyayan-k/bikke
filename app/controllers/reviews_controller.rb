@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
 
   def index
     @user = User.new
-    @reviews = Review.includes({image_attachment: :blob}).order('created_at DESC')
+    @reviews = Review.includes({image_attachment: :blob}).order('created_at DESC').limit(5)
   end
 
   def new
@@ -50,7 +50,17 @@ class ReviewsController < ApplicationController
 
   def displacement
     @review = Review.find_by(displacement_id: params[:id])
-    @reviews = Review.where(displacement_id: params[:id]).includes([:image_attachment]).order('created_at DESC')
+    @reviews = Review.where(displacement_id: params[:id]).includes({image_attachment: :blob}).order('created_at DESC')
+  end
+
+  def maker
+    @review = Review.find_by(maker_id: params[:id])
+    @reviews = Review.where(maker_id: params[:id]).includes({image_attachment: :blob}).order('created_at DESC')
+  end
+
+  def type
+    @review = Review.find_by(type_id: params[:id])
+    @reviews = Review.where(type_id: params[:id]).includes({image_attachment: :blob}).order('created_at DESC')
   end
 
   private

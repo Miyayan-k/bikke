@@ -1,0 +1,51 @@
+<%= render "shared/second_header" %>
+
+<div class="search-result-content">
+  <% if @reviews.length !=0 %>
+    <div class="category-result-title">
+      <%= "#{@review.maker.name}の一覧ページ" %>
+    </div>
+    <ul class='review-lists'>
+      <%  @reviews.each do |review| %>
+        <li class='list'>
+          <%= link_to review_path(review.id) do %>
+          <div class='review-img-content'>
+            <% if review.image.attached? %>
+              <%= image_tag review.image, class: "review-img" %>
+            <% else %>
+              <%= image_tag "noimage.png", class: "review-img" %>
+            <% end %>
+          </div>
+
+          <div class='review-info'>
+            <div class='review-name'>
+              <%= review.bike %>
+            </div>
+            <div class='review-recommend-eval'>
+              <span class="recommend-eval-text">総合評価</span>
+              <div id="star-rate-<%= review.id %>"></div>
+            </div>
+          </div>
+          <% end %>
+        </li>
+
+        <script>
+          $('#star-rate-<%= review.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            readOnly: true,
+            score: <%= review.recommend %>,
+          });
+        </script>
+      <% end %>
+    </ul>
+
+  <% else %>
+    <div class="noresult">該当するレビューはありません</div>
+  <% end %>
+  <br>
+  <%= link_to 'トップページへ戻る', root_path, class:"redirect-btn" %>
+</div>

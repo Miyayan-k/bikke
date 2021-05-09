@@ -1,81 +1,105 @@
 <div class='search-contents'>
   <div class='bike-search'>
     <div class="bike-title">▶︎　車種名から探す</div>
-    <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :bike, placeholder: "車種名", class: "input-box" %>
-      <%= form.submit "検索", class: "search-button" %>
+      <%= search_form_for @r, url: search_reviews_path do |f| %>
+        <%= f.search_field :bike_cont, placeholder: "車種名", class: "search-field" %>
+        <%= f.submit "検索", class: "search-btn" %>
       <% end %>
   </div>
   <div class='displacement-search'>
     <div class="displacement-title">▶︎　排気量から探す</div>
     <ul class="displacement-list1">
-      <li class="displacement">50CC以下</li>
-      <li class="displacement">51~125CC</li>
-      <li class="displacement">126~250CC</li>
-      <li class="displacement">251~400CC</li>
+      <%= link_to "50cc以下", '/reviews/displacement/1', class: "displacement" %>
+      <%= link_to "51~125cc", '/reviews/displacement/2', class: "displacement" %>
+      <%= link_to "126~250cc", '/reviews/displacement/3', class: "displacement" %>
+      <%= link_to "251~400cc", '/reviews/displacement/4', class: "displacement" %>
     </ul>
     <ul class="displacement-list2">
-      <li class="displacement">401~750CC</li>
-      <li class="displacement">751~1000CC</li>
-      <li class="displacement">1000CC以上</li>
+      <%= link_to "401~750cc", '/reviews/displacement/5', class: "displacement" %>
+      <%= link_to "751~1000cc", '/reviews/displacement/6', class: "displacement" %>
+      <%= link_to "1000cc以上", '/reviews/displacement/7', class: "displacement" %>
     </ul>
   </div>
   <div class='maker-search'>
     <div class="maker-title">▶︎　メーカーから探す</div>
     <ul class="maker-list1">
-      <%= link_to "HONDA", "#", class:"maker"%>
-      <%= link_to "YAMAHA", "#", class:"maker" %>
-      <%= link_to "SUZUKI", "#", class:"maker" %>
-      <%= link_to "KAWASAKI", "#", class:"maker" %>
+      <%= link_to "HONDA", '/reviews/maker/1', class: "maker" %>
+      <%= link_to "YAMAHA", '/reviews/maker/2', class: "maker" %>
+      <%= link_to "SUZUKI", '/reviews/maker/3', class: "maker" %>
+      <%= link_to "KAWASAKI", '/reviews/maker/4', class: "maker" %>
+      <%= link_to "DOCATI", '/reviews/maker/5', class: "maker" %>
     </ul>
     <ul class="maker-list2">
-      <li class="maker">DOCATI</li>
-      <li class="maker">BMW</li>
-      <li class="maker">Harley-Davidson</li>
-      <li class="maker">TRIUMPH</li>
-      <li class="maker">KTM</li>
+      <%= link_to "BMW", '/reviews/maker/6', class: "maker" %>
+      <%= link_to "Harley-Davidson", '/reviews/maker/7', class: "maker" %>
+      <%= link_to "TRIUMPH", '/reviews/maker/8', class: "maker" %>
+      <%= link_to "KTM", '/reviews/maker/9', class: "maker" %>
+      <%= link_to "aprilia", '/reviews/maker/10', class: "maker" %>
     </ul>
     <ul class="maker-list3">
-      <li class="maker">Aprilia</li>
-      <li class="maker">MotoGuzzi</li>
-      <li class="maker">MV Agusta</li>
-      <li class="maker">Vespa</li>
+      <%= link_to "MOTO GUZZI", '/reviews/maker/11', class: "maker" %>
+      <%= link_to "MV Agusta", '/reviews/maker/12', class: "maker" %>
+      <%= link_to "Vespa", '/reviews/maker/13', class: "maker" %>
+      <%= link_to "Indian", '/reviews/maker/14', class: "maker" %>
+      <%= link_to "KYMCO", '/reviews/maker/15', class: "maker" %>
     </ul>
     <ul class="maker-list4">
-      <li class="maker">Indian</li>
-      <li class="maker">KYMCO</li>
-      <li class="maker">その他</li>
+      <%= link_to "Buell", '/reviews/maker/16', class: "maker" %>
+      <%= link_to "bimota", '/reviews/maker/17', class: "maker" %>
+      <%= link_to "Husqvana", '/reviews/maker/18', class: "maker" %>
+      <%= link_to "その他", '/reviews/maker/19', class: "maker" %>
     </ul>
   </div>
   <div class='mototype-search'>
     <div class="mototype-title">▶︎　タイプから探す</div>
     <ul class="mototype-list1">
       <li class="mototype">
-        <%= link_to image_tag("SS.png", class:"list-pict"), "#" %>
+        <%= link_to image_tag("SS.png", class:"list-pict"), "/reviews/type/1" %>
         スーパースポーツ</li>
       <li class="mototype">
-        <%= link_to image_tag("naked.png", class:"list-pict"), "#" %>
+        <%= link_to image_tag("naked.png", class:"list-pict"), "/reviews/type/2" %>
         ネイキッド</li>
       <li class="mototype">
-        <%= link_to image_tag("american.png", class:"list-pict"), "#" %>
+        <%= link_to image_tag("american.png", class:"list-pict"), "/reviews/type/3" %>
         アメリカン</li>
       <li class="mototype">
-        <%= link_to image_tag("street.png", class:"list-pict"), "#" %>
+        <%= link_to image_tag("street.png", class:"list-pict"), "/reviews/type/4" %>
         ストリート</li>
     </ul>
     <ul class="mototype-list2">
       <li class="mototype">
-        <%= link_to image_tag("offroad.png", class:"list-pict"), "#" %>
+        <%= link_to image_tag("offroad.png", class:"list-pict"), "/reviews/type/5" %>
         オフロード</li>
       <li class="mototype">
-        <%= link_to image_tag("motard.png", class:"list-pict"), "#" %>
+        <%= link_to image_tag("motard.png", class:"list-pict"), "/reviews/type/6" %>
         モタード</li>
       <li class="mototype">
-        <%= link_to image_tag("scooter.png", class:"list-pict"), "#" %>
+        <%= link_to image_tag("scooter.png", class:"list-pict"), "/reviews/type/7" %>
         スクーター</li>
       <li class="mototype">
-        <%= link_to image_tag("trike.png", class:"list-pict"), "#" %>
+        <%= link_to image_tag("trike.png", class:"list-pict"), "/reviews/type/8" %>
         トライク</li>
+      <li class="mototype">
+        <%= link_to image_tag("other.png", class:"list-pict"), "/reviews/type/9" %>
+        その他</li>
     </ul>
+  </div>
+  <div class="refined-serach">
+    <div class="refined-title">▶︎　絞り込み検索</div>
+    <%= search_form_for @r, url: search_reviews_path do |f| %>
+      <div class="refined-label">
+        <%= f.label :displacement_id_eq, '排気量　　' %>
+        <%= f.collection_select :displacement_id_eq, Displacement.all, :id, :name, prompt: '指定なし' %>
+      </div>
+      <div class="refined-label">
+        <%= f.label :maker_id_eq, 'メーカー　' %>
+        <%= f.collection_select :maker_id_eq, Maker.all, :id, :name, prompt: '指定なし' %>
+      </div>
+      <div class="refined-label">
+        <%= f.label :type_id_eq, '車種タイプ' %>
+        <%= f.collection_select :type_id_eq, Type.all, :id, :name, prompt: '指定なし' %>
+      </div>
+      <%= f.submit '検索', class:"search-btn" %>
+    <% end %>
   </div>
 </div>

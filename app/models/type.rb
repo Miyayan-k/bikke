@@ -1,6 +1,5 @@
 class Type < ActiveHash::Base
   self.data = [
-    { id: 0, name: '---' },
     { id: 1, name: 'スーパースポーツ' },
     { id: 2, name: 'ネイキッド' },
     { id: 3, name: 'アメリカン' },

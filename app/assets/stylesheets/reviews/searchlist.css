@@ -2,21 +2,23 @@
 .search-contents {
   padding: 5vh 25vw ;
   height: auto;
-  background-color: #ff8c00;
+  background-color: #fff;
 }
 
 .bike-search,
 .displacement-search,
 .maker-search,
-.type-search {
+.mototype-search {
   margin: 0 auto 30px;
 }
 
 .bike-title,
 .displacement-title,
 .maker-title,
-.mototype-title {
+.mototype-title,
+.refined-title {
   font-size: 20px;
+  margin-bottom: 1vh;
 }
 
 .displacement-list1,
@@ -37,16 +39,21 @@
 .maker,
 .mototype {
   margin-right: 20px;
-  background-color: #fff;
   padding: 5px 10px;
+  text-decoration: underline;
+  color: black;
 }
 
 .search-form {
   margin: 20px;
 }
 
-.mototype-search {
-  
+.search-field {
+  padding: 4px 8px;
+  margin-right: 2%;
+  border-radius: 5px;
+  width: 15vw;
+  height: 5vh;
 }
 
 .mototype {
@@ -61,6 +68,24 @@
   object-fit: scale-down;
   width: 100%;
   height: 100%;
+}
+
+.refined-label {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+#q_displacement_id_eq,
+#q_maker_id_eq,
+#q_type_id_eq {
+  background-color: #ffdab9;
+  border-radius: 5px;
+}
+
+.search-btn {
+  padding: 2px 4px;
+  background-color: #ffdab9;
+  border-radius: 5px;
 }
 
 /* //検索部分 */

@@ -1,10 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :find_review, only: [:show, :edit, :update, :destroy]
   before_action :no_reload, only: [:destroy]
+  before_action :search_reviews, only: [:index, :search]
 
   def index
     @user = User.new
-    @reviews = Review.includes(:user).order('created_at DESC').limit(10)
+    @reviews = Review.includes({image_attachment: :blob}).order('created_at DESC').limit(5)
   end
 
   def new
@@ -43,6 +44,25 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def search
+    @results = @r.result.includes(:image_attachment)
+  end
+
+  def displacement
+    @review = Review.find_by(displacement_id: params[:id])
+    @reviews = Review.where(displacement_id: params[:id]).includes({image_attachment: :blob}).order('created_at DESC')
+  end
+
+  def maker
+    @review = Review.find_by(maker_id: params[:id])
+    @reviews = Review.where(maker_id: params[:id]).includes({image_attachment: :blob}).order('created_at DESC')
+  end
+
+  def type
+    @review = Review.find_by(type_id: params[:id])
+    @reviews = Review.where(type_id: params[:id]).includes({image_attachment: :blob}).order('created_at DESC')
+  end
+
   private
   def find_review
     @review = Review.find(params[:id])
@@ -62,5 +82,9 @@ class ReviewsController < ApplicationController
    else
       redirect_to root_path
    end
+  end
+
+  def search_reviews
+    @r = Review.ransack(params[:q])
   end
 end

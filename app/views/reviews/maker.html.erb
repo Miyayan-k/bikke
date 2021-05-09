@@ -1,8 +1,9 @@
 <%= render "shared/second_header" %>
+
 <div class="search-result-content">
   <% if @reviews.length !=0 %>
     <div class="category-result-title">
-      <%= "#{@review.displacement.name}の一覧ページ" %>
+      <%= "#{@review.maker.name}の一覧ページ" %>
     </div>
     <ul class='review-lists'>
       <%  @reviews.each do |review| %>

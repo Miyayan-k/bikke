@@ -87,9 +87,11 @@
 
     <%# 編集・削除ボタン %>
     <div class="edit-delete-group">
-      <% if current_user.id == @review.user_id %>
-        <%= link_to "編集", edit_review_path, class: "review-edit-btn" %>
-        <%= link_to "削除", review_path(@review.id), method: :delete, class:"review-destroy", data: {confirm: "レビューを削除しますか？"} %>
+      <% if user_signed_in? %>
+        <% if current_user.id == @review.user_id %>
+          <%= link_to "編集", edit_review_path, class: "review-edit-btn" %>
+          <%= link_to "削除", review_path(@review.id), method: :delete, class:"review-destroy", data: {confirm: "レビューを削除しますか？"} %>
+        <% end %>
       <% end %>
     </div>
   </div>

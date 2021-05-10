@@ -1,0 +1,13 @@
+<%= render "shared/second_header" %>
+
+<div class="user-contents">
+  <% if user_signed_in? && @user == current_user %>
+    <h1>マイページ</h1>
+  <% else %>
+    <h1><%= @user.nickname %>さんのページ</h1>
+  <% end %>
+  <h2><%= @user.nickname %>さんのレビュー一覧</h2>
+  <ul class='review-lists'>
+    <%= render partial: 'reviews/review', collection: @reviews %>
+  </ul>
+</div>

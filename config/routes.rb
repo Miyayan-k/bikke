@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   devise_for :users
   root to: "reviews#index"
   get '/reviews/displacement/:id', to: "reviews#displacement"
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
     end
     resources :comments, only: :create
   end
+  resources :users, only: :show
 
   # ゲストログイン機能
   devise_scope :user do

@@ -10,4 +10,5 @@
   <ul class='review-lists'>
     <%= render partial: 'reviews/review', collection: @reviews %>
   </ul>
+  <%= paginate @reviews, class: "pagination" %>
 </div>

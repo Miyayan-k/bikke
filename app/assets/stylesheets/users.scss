@@ -1,5 +1,6 @@
 .user-contents {
-
+  display: flex;
+  flex-direction: column;
 }
 
 .user-contents>h1 {
@@ -11,5 +12,9 @@
 .user-contents>h2 {
   font-size: 2vh;
   font-weight: bold;
+  text-align: center;
+}
+
+.pagination {
   text-align: center;
 }

@@ -15,6 +15,29 @@
   text-align: center;
 }
 
+/* ページネーション */
 .pagination {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+.page-item {
+  padding: 5px;
+}
+
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #f4a460;
+  border-radius: 15px;
+}
+
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;
 }

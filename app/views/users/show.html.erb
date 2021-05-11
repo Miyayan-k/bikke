@@ -11,4 +11,9 @@
     <%= render partial: 'reviews/review', collection: @reviews %>
   </ul>
   <%= paginate @reviews %>
+  <div class="user-edit">
+    <% if user_signed_in? && @user == current_user %>
+        <%= link_to "ユーザー情報編集", edit_user_registration_path, class: "user-edit-btn" %>
+    <% end %>
+  </div>
 </div>

@@ -10,6 +10,8 @@
 ### Association
 - has_many :reviews
 - has_many :comments
+- has_many :likes
+
 ## reviewsテーブル
 | Column            | Type          | Options                        |
 | ----------------- | ------------- | ------------------------------ |
@@ -30,6 +32,7 @@
 ### Association
 - belongs_to :user
 - has_many   :comments
+- has_many   :likes
 ## commentsテーブル
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
@@ -39,12 +42,12 @@
 ### Association
 - belongs_to :user
 - belongs_to :review
+## likesテーブル
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user      | references | null: false, foreign_key: true |
+| review    | references | null: false, foreign_key: true |
+### Association
+- belongs_to :user
+- belongs_to :review
 
-* System dependencies
-* Configuration
-* Database creation
-* Database initialization
-* How to run the test suite
-* Services (job queues, cache servers, search engines, etc.)
-* Deployment instructions
-* ...

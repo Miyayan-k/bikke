@@ -151,7 +151,7 @@
 .comment-box {
   width: 40vw;
   background-color: #fff;
-  margin: 5vh 0;
+  margin: 4vh 0;
   text-align: center;
 }
 
@@ -163,34 +163,28 @@
   resize: none;
 }
 
-.comment-warn {
-  padding: 10px;
-  font-size: 14px;
-  margin: 10px 0px;
-  text-align: left;
-}
-
 .comment_btn {
   line-height: 48px;
-  background-color: #3CCACE;
-  border: 1px solid #3CCACE;
+  background-color: #f4a460;
+  border: 1px solid #f4a460;
   color: #fff;
   width: 50%;
   min-width: 150px;
   font-size: 18px;
   border-radius: 100px;
-  margin-bottom: 2vh;
+  margin: 2vh 0;
 }
 
 .comment-user{
-  color: black;
+  color: #a9a9a9;
   font-size: 12px;
 }
 
 .comments-list{
   list-style-type: square;
-  list-style-position: inside;
+  list-style-position: outside;
   text-align: left;
+  margin-bottom: 1vh;
 }
 
 .comment-text{

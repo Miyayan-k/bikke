@@ -1,0 +1,113 @@
+.user-contents {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-contents>h1 {
+  font-size: 3vh;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3vh;
+}
+
+.user-contents>h2 {
+  font-size: 2vh;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2vh;
+}
+
+.user-contents>h3 {
+  font-size: 2vh;
+  text-align: center;
+}
+
+.user-contents>.review-lists {
+  background-color: #ffdab9;
+  margin: 0 4vw;
+}
+
+.user-edit {
+  display: flex;
+  justify-content: center;
+}
+
+.user-edit-btn {
+  text-align: center;
+  background-color: #ff8c0f;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 3vh 2vw;
+  padding: 1vh;
+  width: 10vw;
+  border-radius: 10px;
+}
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.pagination>li>a {
+  border: none;
+  color: #696969;
+}
+
+.page-item {
+  padding: 5px;
+}
+
+.pagination>.active>a {
+  background: #f4a460;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  border-radius: 15px;
+}
+
+/* /ページネーション */
+
+/* ユーザー情報編集 */
+.user-edit-contents {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-edit-form {
+  text-align: center;
+}
+
+.edit-nickname {
+  font-size: 2vh;
+  margin: 2vh 0;
+}
+
+.user-update-btn, {
+  text-align: center;
+  background-color: #ff8c0f;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFF;
+  padding: 1vh;
+  border-radius: 10px;
+  border-style: none;
+}
+
+.user-edit-contents>h1 {
+  text-align: center;
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+.field {
+  width: 16vw;
+  margin: 2vh auto;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+/* /ユーザー情報編集 */

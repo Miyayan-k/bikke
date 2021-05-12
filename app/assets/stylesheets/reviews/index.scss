@@ -26,7 +26,7 @@ a {
 .title-contents {
   width: 100vw;
   height: 100vh;
-  background-image: image-url('topphoto.png');
+  background-image: image_url('topphoto1.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -116,7 +116,6 @@ a {
 }
 
 .review-lists {
-  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

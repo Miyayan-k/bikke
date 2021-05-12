@@ -12,10 +12,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     user_path(@user.id)
   end
 
-  #ゲストユーザーはアカウント情報を編集・更新できない
-  def ensure_normal_user
-    if resource.email == 'guest@example.com'
-      redirect_to root_path, alert: 'ゲストユーザーは編集できません。'
-    end
-  end
+
+  
 end

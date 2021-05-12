@@ -107,7 +107,7 @@
         <% @comments.reverse_each do |comment| %>
           <li class="comments-list">
             <a class="comment-text"><%= comment.text %>
-            <%= link_to comment.user.nickname, "#", class: "comment-user" %>
+            <%= link_to comment.user.nickname, user_path(comment.user), class: "comment-user" %>
             <a class="comment-time"><%= l comment.created_at %>
           </li>
         <% end %> 

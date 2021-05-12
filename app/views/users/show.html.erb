@@ -7,10 +7,14 @@
     <h1><%= @user.nickname %>さんのページ</h1>
   <% end %>
   <h2><%= @user.nickname %>さんのレビュー一覧</h2>
-  <ul class='review-lists'>
-    <%= render partial: 'reviews/review', collection: @reviews %>
-  </ul>
-  <%= paginate @reviews %>
+  <% if @user.reviews.blank? %>
+    <h3><%= @user.nickname %>さんの投稿したレビューはありません</h3>
+  <% else %>
+    <ul class='review-lists'>
+      <%= render partial: 'reviews/review', collection: @reviews %>
+    </ul>
+    <%= paginate @reviews %>
+  <% end %>
   <div class="user-edit">
     <% if user_signed_in? && @user == current_user %>
         <%= link_to "アカウント情報編集", edit_user_registration_path, class: "user-edit-btn" %>

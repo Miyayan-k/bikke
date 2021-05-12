@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'users/show'
+  devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: "reviews#index"
   get '/reviews/displacement/:id', to: "reviews#displacement"
   get '/reviews/maker/:id', to: "reviews#maker"
@@ -8,7 +9,9 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+    resources :comments, only: :create
   end
+  resources :users, only: :show
 
   # ゲストログイン機能
   devise_scope :user do

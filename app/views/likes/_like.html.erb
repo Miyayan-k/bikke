@@ -1,0 +1,20 @@
+<div class="option" id="like-link-<%= @review.id %>">
+  <% if current_user.likes.find_by(review_id: @review.id) %>
+    <%= link_to unlike_path(@review.id), method: :delete, remote: true, class:"fav" do %>
+      <div class="unfav-btn-field">
+        <%= image_tag 'ungood.png', class: "favorite-btn", width:"20", height:"20" %>
+        お気に入り解除
+      </div>
+    <% end %>
+  <% else %>
+    <%= link_to like_path(@review.id), method: :post, remote: true, class:"fav" do %>
+      <div class="fav-btn-field">
+        <%= image_tag 'good.png', class: "favorite-btn", width:"20", height:"20" %>
+        お気に入り
+      </div>
+    <% end %>
+  <% end %>
+  <div class="fav-counter">
+    お気に入り数：<%= @review.likes.count %>
+  </div>
+</div>

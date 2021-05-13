@@ -85,6 +85,7 @@
 
 .review-star-eval {
   width: 70vw;
+  margin-bottom: 2vw;
 }
 
 .star-group {
@@ -122,28 +123,6 @@
   color: black;
   margin: 3vh 2vw;
   padding: 1vh 5vw;
-}
-
-.option {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  margin-top: 3vh;
-}
-
-.favorite-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-  color: #2d2d2d;
-  border: 2px solid #ffb340;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.favorite-star-icon {
-  margin-right: 1vw;
 }
 
 /* /レビュー概要 */

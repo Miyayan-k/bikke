@@ -77,13 +77,10 @@
     <%# 星評価表示 %>
     <%= render "shared/star_eval" %>
 
-    <%# いいね %>
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "good.png", class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>Good 0</span>
-      </div>
-    </div>
+    <%# お気に入り %>
+    <% if user_signed_in? && current_user.id != @review.user_id %>
+      <%= render partial: 'likes/like', review: @review %>
+    <% end %>
 
     <%# 編集・削除ボタン %>
     <div class="edit-delete-group">

@@ -1,0 +1,34 @@
+.option {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fav-btn-field,
+.unfav-btn-field {
+  color: #2d2d2d;
+  padding: 1vh 1vw;
+  border: 2px solid #ffb340;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.unfav-btn-field {
+  background-color: #f4a460;
+}
+
+.favorite-btn {
+  min-width: 5px;
+}
+
+.fav:hover {
+  text-decoration: none;
+}
+
+
+.fav-counter {
+  text-align: center;
+  margin-top: 1vh;
+  font-weight: bold;
+}

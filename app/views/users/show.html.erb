@@ -15,9 +15,16 @@
     </ul>
     <%= paginate @reviews %>
   <% end %>
+  <h2><%= @user.nickname %>さんのお気に入りレビュー一覧</h2>
+  <ul class='review-lists'>
+    <% @user.like_reviews.includes({image_attachment: :blob}).each do |review| %>
+      <%= render partial: 'reviews/review', locals: { review: review } %>
+    <% end%>
+  </ul>
+</div>
+
   <div class="user-edit">
     <% if user_signed_in? && @user == current_user %>
         <%= link_to "アカウント情報編集", edit_user_registration_path, class: "user-edit-btn" %>
     <% end %>
   </div>
-</div>

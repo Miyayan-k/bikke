@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :comments
+  has_many :likes
+  has_many :like_reviews, through: :likes, source: :review
 
   # ゲストログインするため
   def self.guest

@@ -2,9 +2,13 @@ Rails.application.routes.draw do
   get 'users/show'
   devise_for :users, controllers: { registrations: 'users/registrations' }
   root to: "reviews#index"
+  # カテゴリー検索ルート
   get '/reviews/displacement/:id', to: "reviews#displacement"
   get '/reviews/maker/:id', to: "reviews#maker"
   get '/reviews/type/:id', to: "reviews#type"
+  # いいね機能ルート
+  post   '/like/:review_id' => 'likes#like',   as: 'like'
+  delete '/like/:review_id' => 'likes#unlike', as: 'unlike'
   resources :reviews do
     collection do
       get 'search'

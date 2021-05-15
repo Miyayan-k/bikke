@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
 
   def index
     @user = User.new
-    @reviews = Review.includes({image_attachment: :blob}).order('created_at DESC').limit(5)
+    @reviews = Review.includes({image_attachment: :blob}).order('created_at DESC').page(params[:page]).per(5)
   end
 
   def new

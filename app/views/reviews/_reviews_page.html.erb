@@ -1,0 +1,5 @@
+<h2 class='title'>All Reviews</h2>
+<ul class='review-lists'>
+  <%= render partial: 'review', collection: @reviews %>
+</ul>
+<%= paginate @reviews, remote: true %>

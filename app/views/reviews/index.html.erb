@@ -32,11 +32,12 @@
 <%= render "shared/search-list" %>
   <%# 検索部分 %>
   <%# レビュー一覧 %>
-  <div class='review-contents'>
-    <h2 class='title'>New Reviews</h2>
+  <div class='review-contents', id="reviews-page">
+    <h2 class='title'>All Reviews</h2>
     <ul class='review-lists'>
       <%= render partial: 'review', collection: @reviews %>
     </ul>
+    <%= paginate @reviews, remote: true %>
   </div>
   <%# レビュー一覧 %>
 </div>

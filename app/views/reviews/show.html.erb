@@ -89,6 +89,8 @@
         <%= link_to "削除", review_path(@review.id), method: :delete, class:"review-destroy", data: {confirm: "レビューを削除しますか？"} %>
       <% end %>
     </div>
+    <%# /編集・削除ボタン %>
+    <%# コメント %>
     <div class="comment-box">
       <% if user_signed_in? %>
         <%= form_with(model: [@review, @comment], local: true) do |f| %>
@@ -103,13 +105,14 @@
       <ul class="comments-lists">
         <% @comments.reverse_each do |comment| %>
           <li class="comments-list">
+            <%= link_to comment.user.nickname, user_path(comment.user), class: "comment-user" %>さん
             <a class="comment-text"><%= comment.text %>
-            <%= link_to comment.user.nickname, user_path(comment.user), class: "comment-user" %>
             <a class="comment-time"><%= l comment.created_at %>
           </li>
         <% end %> 
       </ul>
     </div>
+    <%# /コメント部分%>
   </div>
 </div>
   <%# /レビューの概要 %>

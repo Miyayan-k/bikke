@@ -159,19 +159,29 @@
   font-size: 12px;
 }
 
-.comments-list{
-  list-style-type: square;
-  list-style-position: outside;
+.comments-lists{
+  list-style-type: none;
   text-align: left;
   margin-bottom: 1vh;
 }
 
+.comment-list {
+  display: flex;
+  justify-content: space-between;
+}
+
 .comment-text{
   overflow-wrap: break-word;
+  margin: 0 1vw;
+  color: black;
 }
 
 .comment-time{
   color: #C0C0C0;
   font-size: 8px;
+}
+
+.comment-text:hover {
+  text-decoration: none;
 }
 /* /コメント */

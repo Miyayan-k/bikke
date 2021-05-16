@@ -1,5 +1,5 @@
 <%= render "shared/second_header" %>
-
+<%= render 'shared/flash_messages' %>
 <div class="review-show">
   <div class="review-box">
     <div class="review-img-content">
@@ -92,25 +92,7 @@
     <%# /編集・削除ボタン %>
     <%# コメント %>
     <div class="comment-box">
-      <% if user_signed_in? %>
-        <%= form_with(model: [@review, @comment], local: true) do |f| %>
-        <%= render 'shared/error_messages', model: f.object %>
-        <div>
-          <%= f.text_area :text, placeholder:"ライダーに質問やコメントなどをしてみましょう", class: :comment_text %>
-        </div>
-          <%= f.submit "コメントする", class: :comment_btn %>
-          </div>
-        <% end %>
-      <% end %>
-      <ul class="comments-lists">
-        <% @comments.reverse_each do |comment| %>
-          <li class="comments-list">
-            <%= link_to comment.user.nickname, user_path(comment.user), class: "comment-user" %>さん
-            <a class="comment-text"><%= comment.text %>
-            <a class="comment-time"><%= l comment.created_at %>
-          </li>
-        <% end %> 
-      </ul>
+        <%= render "comments_area" %>
     </div>
     <%# /コメント部分%>
   </div>

@@ -181,7 +181,16 @@
   font-size: 8px;
 }
 
-.comment-text:hover {
+.comment-text:hover,
+.comment-time:hover {
   text-decoration: none;
+}
+
+.comment-delete-btn {
+  color: #d3d3d3;
+  border: 1px solid #d3d3d3;
+  padding: 2px 4px;
+  border-radius: 10px;
+  margin-left: 1vw;
 }
 /* /コメント */

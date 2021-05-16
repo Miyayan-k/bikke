@@ -3,10 +3,21 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save
       redirect_to review_path(@comment.review)
+      flash[:alert] = "コメントを投稿しました"
     else
-      @review = @comment.review
-      @comments = @review.comments
-      render "review/show"
+      redirect_to review_path(@comment.review)
+      flash[:alert] = "コメントを入力してください"
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      redirect_to review_path(@comment.review)
+      flash[:alert] = "コメントを削除しました"
+    else
+      redirect_to review_path(@comment.review)
+      flash[:alert] = "コメントの削除に失敗しました"
     end
   end
 

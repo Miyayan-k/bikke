@@ -10,7 +10,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       ImageList.appendChild(imageElement);
     };
     document.getElementById('bike-image').addEventListener('change', function(e){
-      const imageContent = document.querySelector('img');
+      const imageContent = document.querySelector('.pre-image');
       if (imageContent){
         imageContent.remove();
       }

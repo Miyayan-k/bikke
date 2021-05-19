@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search, :displacement, :maker, :type]
   before_action :find_review, only: [:show, :edit, :update, :destroy]
   before_action :no_reload, only: [:destroy]
   before_action :search_reviews, only: [:index, :search]

@@ -10,6 +10,7 @@ import "channels"
 import "jquery"
 import "../raty"
 import "../animation"
+import "../preview"
 
 var jQuery = require('jquery')
 global.$ = global.jQuery = jQuery;

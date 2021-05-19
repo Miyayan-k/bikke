@@ -85,6 +85,8 @@
       <div class="star-form-group" id="star7">
         <%= f.label :recommend,'総合評価　　　', class:'weight-bold-text star-title' %>
       </div>
+      <!-- 星評価javascript -->
+      <%= render "shared/star_eval_new" %>
     </div>
     <%# /星評価 %>
 
@@ -104,9 +106,6 @@
     <%# /下部ボタン %>
   </div>
   <% end %>
-
-  <!-- 星評価javascript -->
-<%= render "shared/star_eval" %>
 
 </div>
 

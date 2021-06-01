@@ -15,8 +15,7 @@
 トップページのヘッダーより、ワンクリックでゲストユーザーとしてログインが可能です。  
 ゲストユーザーは、レビューの投稿、検索、コメント、お気に入り登録といった機能が実行できます。  
 ※アカウント情報の編集・削除機能は実行できません。  
-[![Image from Gyazo](https://i.gyazo.com/d5da33680ad428da54b345e5f1193dfc.jpg)](https://gyazo.com/d5da33680ad428da54b345e5f1193dfc)
-
+[![Image from Gyazo](https://i.gyazo.com/4f373063ee0cb4f314f6d0127929cd42.jpg)](https://gyazo.com/4f373063ee0cb4f314f6d0127929cd42)
 
 # 制作背景
 私自身ライダーであり、バイクが大好きです。  

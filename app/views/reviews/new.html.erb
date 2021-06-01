@@ -1,7 +1,6 @@
 <%= render "shared/second_header" %>
 
 <div class="bike-review-contents">
-
   <div class="post-review-main">
     <h2 class="post-review-title">レビュー投稿</h2>
     <%= form_with(model: @review, local: true) do |f| %>
@@ -85,6 +84,8 @@
       <div class="star-form-group" id="star7">
         <%= f.label :recommend,'総合評価　　　', class:'weight-bold-text star-title' %>
       </div>
+      <!-- 星評価javascript -->
+      <%= render "shared/star_eval_new" %>
     </div>
     <%# /星評価 %>
 
@@ -104,9 +105,6 @@
     <%# /下部ボタン %>
   </div>
   <% end %>
-
-  <!-- 星評価javascript -->
-<%= render "shared/star_eval" %>
 
 </div>
 

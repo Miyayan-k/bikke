@@ -48,7 +48,7 @@ class ReviewsController < ApplicationController
   end
 
   def search
-    @results = @r.result.includes(:image_attachment)
+    @results = @r.result.includes({image_attachment: :blob}).order('created_at DESC')
   end
 
   def displacement

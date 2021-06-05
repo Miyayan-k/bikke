@@ -14,14 +14,8 @@ test:
   <<: *default
   database: bikke_test
 
-# production:
-#   <<: *default
-#   database: bikke_production
-#   username: bikke
-#   password: <%= ENV['BIKKE_DATABASE_PASSWORD'] %>
 production:
   <<: *default
-  host: <%= Rails.application.credentials.rds[:host] %>
-  database: <%= Rails.application.credentials.rds[:database] %>
-  username: <%= Rails.application.credentials.rds[:username] %>
-  password: <%= Rails.application.credentials.rds[:password] %>
+  database: bikke_production
+  username: bikke
+  password: <%= ENV['BIKKE_DATABASE_PASSWORD'] %>

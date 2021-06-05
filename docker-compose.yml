@@ -1,24 +1,23 @@
 version: '3'
 services:
-  db:
-    image: mysql:5.7
-    environment:
-      MYSQL_USER: user
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: bikke_development
-    ports:
-      - '4306:3306'
-    volumes:
-      - mysql-data:/var/lib/mysql
+  # db:
+  #   image: mysql:5.7
+  #   environment:
+  #     MYSQL_USER: user
+  #     MYSQL_ROOT_PASSWORD: password
+  #     MYSQL_PASSWORD: password
+  #     MYSQL_DATABASE: bikke_development
+  #   ports:
+  #     - '4306:3306'
+  #   volumes:
+  #     - mysql-data:/var/lib/mysql
 
   web:
     container_name: bikke_web_prod
     build: .
     environment:
       RAILS_ENV: production
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
-    command: bundle exec puma -C config/puma.rb
+    command: bundle exec puma -C config/puma.rb -e production
     volumes:
       - .:/bikke
       - ./public:/bikke/public

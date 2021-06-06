@@ -8,7 +8,7 @@ default: &default
   host: <%= ENV.fetch("MYSQL_HOST", "db") %>
   # ====================
 
-  # ====local稼働時======
+  # ====rails s稼働時======
   # username: root
   # password:
   # socket: /tmp/mysql.sock

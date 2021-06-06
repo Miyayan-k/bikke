@@ -24,6 +24,7 @@ services:
       - db
     stdin_open: true
     tty: true
+
   # nginx:
   #   container_name: bikke_nginx_prod
   #   build: containers/nginx

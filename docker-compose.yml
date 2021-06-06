@@ -24,16 +24,16 @@ services:
       - db
     stdin_open: true
     tty: true
-  nginx:
-    container_name: bikke_nginx_prod
-    build: containers/nginx
-    volumes:
-      - ./public:/bikke/public
-      - ./tmp:/bikke/tmp
-    ports:
-      - 80:80
-    depends_on:
-      - web
+  # nginx:
+  #   container_name: bikke_nginx_prod
+  #   build: containers/nginx
+  #   volumes:
+  #     - ./public:/bikke/public
+  #     - ./tmp:/bikke/tmp
+  #   ports:
+  #     - 80:80
+  #   depends_on:
+  #     - web
 volumes:
   mysql-data:
     driver: local

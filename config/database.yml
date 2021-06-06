@@ -2,12 +2,17 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # ====Docker稼働時=====
   username: <%= ENV.fetch("MYSQL_USERNAME", "root") %>
   password: <%= ENV.fetch("MYSQL_PASSWORD", "password") %>
   host: <%= ENV.fetch("MYSQL_HOST", "db") %>
+  # ====================
+
+  # ====local稼働時======
   # username: root
   # password:
   # socket: /tmp/mysql.sock
+  # ====================
 
 development:
   <<: *default
@@ -21,4 +26,4 @@ production:
   <<: *default
   database: bikke_production
   username: bikke
-  password: <%= ENV['BIKKE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['BIKKE_DATABASE_PASSWORD'] %>config

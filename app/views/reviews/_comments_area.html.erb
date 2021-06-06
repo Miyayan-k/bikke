@@ -14,7 +14,7 @@
       <%= link_to comment.user.nickname, user_path(comment.user), class: "comment-user" %>さん
       <a class="comment-text"><%= comment.text %>
       <a class="comment-time"><%= l comment.created_at %>
-      <% if current_user.id == comment.user_id %>
+      <% if user_signed_in? && current_user.id == comment.user_id %>
         <%= link_to "削除", review_comment_path(@review, comment), data: {confirm: "コメントを削除してもよろしいですか？"}, method: :delete, class: "comment-delete-btn" %>
       <% end %>
     </li>

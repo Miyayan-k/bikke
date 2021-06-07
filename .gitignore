@@ -12,6 +12,8 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+!/tmp/sockets
+
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
@@ -35,4 +37,3 @@
 yarn-debug.log*
 .yarn-integrity
 .env
-!/tmp/sockets/.keep

@@ -26,6 +26,7 @@ COPY . /bikke
 
 # ======追加======
 RUN mkdir /tmp/sockets
+RUN mkdir /tmp/pids
 # ===============
 
 COPY entrypoint.sh /usr/bin/
@@ -35,7 +36,7 @@ EXPOSE 3000
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
 
-# =====Start Server========
-CMD bundle exec puma -d && \
+# =====Start Server for production========
+CMD bundle exec puma -e production -C config/puma.rb && \
     /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
-# =========================
+# ========================================

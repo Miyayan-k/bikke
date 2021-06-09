@@ -285,6 +285,7 @@ DEPENDENCIES
   bullet
   byebug
   devise
+  dotenv
   dotenv-rails
   factory_bot_rails
   faker

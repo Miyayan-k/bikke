@@ -200,6 +200,7 @@ http://bikke.ga/
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false               |
 | nickname           | string | null: false               |
+
 ### Association
 - has_many :reviews
 - has_many :comments
@@ -222,24 +223,29 @@ http://bikke.ga/
 | look              | float         | null: false                    |
 | content           | text          | null: false                    |
 | user              | references    | null: false, foreign_key: true |
+
 ### Association
 - belongs_to :user
 - has_many   :comments
 - has_many   :likes
+
 ## commentsテーブル
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | text      | text       | null: false                    |
 | user      | references | null: false, foreign_key: true |
 | review    | references | null: false, foreign_key: true |
+
 ### Association
 - belongs_to :user
 - belongs_to :review
+
 ## likesテーブル
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | user      | references | null: false, foreign_key: true |
 | review    | references | null: false, foreign_key: true |
+
 ### Association
 - belongs_to :user
 - belongs_to :review

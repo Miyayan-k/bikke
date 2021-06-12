@@ -17,8 +17,8 @@ default: &default
 development:
   <<: *default
   database: bikke_development
-  username: ENV['MYSQL_RDS_USER']
-  password: ENV['MYSQL_RDS_PASSWORD']
+  username: <%= ENV['MYSQL_RDS_USER'] %>
+  password: <%= ENV['MYSQL_RDS_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
   host: database-1.cbxurtamjnfc.ap-northeast-1.rds.amazonaws.com
 

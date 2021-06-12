@@ -156,11 +156,19 @@ http://bikke.ga/
 ・jQueryやAjax通信により素早いレスポンスを与え、ストレスレスな操作感  
 などが工夫したポイントです。
 
+# 苦労したポイント
+とにかくデプロイの一言につきます。
+本アプリはDockerで開発したコンテナを、ECRにプッシュし、ECS(EC2)+VPC+RDS+S3でデプロイしたものに、Freenom+Route53でドメインを設定し本番運用しています。
+過去にDockerを用いていないRailsをEC2にてデプロイをしたことがありますが、Dockerをデプロイすることは私にとって非常にハイレベルなものでした。
+ネットワーク周りのエラー、接続されてもローカルでは出なかったRailsエラーにも悩まされました。
+まずはDockerを再度基本から学び直し、そしてAWSでどのようにデプロイしたものが外部アクセスできるのか、学習に励み、その結果デプロイすることができました。
+この経験は私の中でも非常に自信につながるものであり、引き続き学習に努め、より自分のものへと吸収していきたいと考えています。
+
 # 使用技術(開発環境)
 サーバーサイド：Ruby on Rails  
-フロントサイド：HTML,CSS,JavaScript,jQuery,Bootstrap  
+フロントサイド：HTML, CSS, JavaScript, jQuery, Bootstrap  
 テスト：RSpec  
-インフラ：Docker,AWS(EC2)  
+インフラ：Docker, AWS(ECR+ECS+EC2+S3+VPC+S3+Route53), Freenom  
 エディタ：VScode
 
 # 課題・今後実現したい機能
